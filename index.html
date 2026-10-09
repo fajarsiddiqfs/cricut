@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fajar Siddiq Cricut — Cricut for beginners and business</title>
+<meta name="description" content="Cricut for beginners and business. Make stickers, vinyl, iron-on, t-shirts and gifts at home to studio. Start for fun, then sell what you make.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:,">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cricut.fajarsiddiq.com/">
+<meta property="og:title" content="Cricut for beginners and business">
+<meta property="og:description" content="Make stickers, vinyl, iron-on, t-shirts and gifts at home to studio. Start for fun, then sell what you make.">
+<meta property="og:image" content="https://cricut.fajarsiddiq.com/images/meta.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Euclid";font-weight:600;font-style:normal;font-display:swap;src:local("Euclid Circular A Semibold"),local("EuclidCircularA-Semibold"),local("Euclid Flex Semibold"),local("EuclidFlex-Semibold"),local("Euclid Semibold"),local("Euclid-Semibold")}
+@font-face{font-family:"Euclid";font-weight:700;font-style:normal;font-display:swap;src:local("Euclid Circular A Bold"),local("EuclidCircularA-Bold"),local("Euclid Flex Bold"),local("EuclidFlex-Bold"),local("Euclid Bold"),local("Euclid-Bold")}
+:root{--font:"Euclid",Inter,system-ui,sans-serif;color-scheme:light;--bg:#fff;--fg:#0b0b0f;--muted:#6b6b75;--line:#e9e9ee;--soft:#f3f3f6;--brand:#00C08B;--on:#0b0b0f;--gutter:clamp(20px,5vw,32px);--gap:clamp(10px,2vw,16px);--section:clamp(56px,9vw,96px);--card:clamp(18px,3vw,24px)}
+*{box-sizing:border-box}
+h1,h2,h3,h4{font-weight:700}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.55 var(--font);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}a{color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 max(var(--gutter),env(safe-area-inset-left)) 0 max(var(--gutter),env(safe-area-inset-right))}
+section.wrap{padding-top:var(--section)}
+h2.big{font-size:clamp(2.2rem,9vw,3.4rem);font-weight:700;text-align:center;margin:0 0 clamp(24px,4vw,36px);letter-spacing:-.035em;line-height:1.05}
+h2.big small{display:block;font-size:.85rem;font-weight:400;letter-spacing:0;color:var(--muted);margin-top:10px;line-height:1.4}
+h2.big small a{color:var(--fg);text-decoration:underline;text-underline-offset:2px;display:inline-flex;align-items:center;gap:5px;vertical-align:middle}
+h2.big small .si{width:1.15em;height:1.15em;flex:none;color:#0b0b0f;fill:#0b0b0f}
+h2.big small .si [stroke]{stroke:#0b0b0f}
+/* top bar */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
+.nav b{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+.nav ul{min-width:0;display:flex;gap:4px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a{display:block;text-decoration:none;font-size:.85rem;font-weight:500;padding:8px 10px;border-radius:99px;white-space:nowrap;color:var(--muted)}
+.nav a:hover{background:var(--soft);color:var(--fg)}
+.nav a.deal,.nav a.deal:hover{background:var(--brand);color:#fff}
+.nav a.deal:hover{opacity:.9}
+.nav .wrap{max-width:1000px}
+@media(max-width:1179px){.cc button span{display:none}.cc button{padding:0 10px}}
+.nav b{display:flex;align-items:baseline;gap:.3em;flex-shrink:0}.nav b .bn{font-size:1.35rem;line-height:1}.nav b .x{color:var(--muted);font-weight:700;margin-left:.1em}.nav b svg{height:1.25em;width:auto;display:block;position:relative;top:.02em}
+@media(max-width:560px){.nav a{padding:12px 14px}.nav b{display:none}}
+.navr{display:flex;align-items:center;gap:8px;flex:none}
+.nav .navr a.deal{padding:8px 12px}
+@media(max-width:560px){.nav .navr a.deal{padding:0 12px;height:36px;display:inline-flex;align-items:center;font-size:.8rem}}
+.sp{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
+.sp .btn{max-width:100%;text-align:center;padding-top:12px;padding-bottom:12px}
+.cc{display:flex;flex:none;background:var(--soft);border-radius:99px;padding:3px}
+.cc button{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;font:600 .8rem var(--font);color:var(--muted);padding:0 11px;height:36px;border-radius:99px;cursor:pointer}
+.cc .fl{width:20px;height:14px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.14);flex:none}
+@media(max-width:399px){.cc button{padding:0 10px}.cc button span{display:none}}
+.cc{background:transparent}
+.cc button,.cc button[aria-pressed="true"]{background:transparent;color:var(--fg)}
+.cc button[aria-pressed="true"]{font-weight:700}
+.cc{padding:0;gap:0}
+.cc button{padding:0 5px;gap:5px}
+@media(max-width:1179px){.cc button{padding:0 5px}}
+@media(max-width:399px){.cc button{padding:0 5px}}
+/* hero */
+.hero .wrap{display:grid;gap:clamp(24px,5vw,40px);align-items:center;text-align:center;padding-top:clamp(32px,6vw,64px)}
+.hero h1{font-size:clamp(2.4rem,10vw,4.4rem);font-weight:700;line-height:1;letter-spacing:-.045em;margin:0 0 var(--gap)}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .tag{font-size:clamp(1.15rem,4.4vw,1.6rem);line-height:1.3;margin:0 auto 24px;max-width:17em}
+.cta{display:flex;flex-wrap:wrap;gap:var(--gap);justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:99px;background:var(--fg);color:var(--bg);font:600 .95rem var(--font);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,opacity .15s}
+.btn:hover{transform:translateY(-1px);opacity:.9}
+.btn.alt{background:var(--soft);color:var(--fg)}
+.btn.brand{background:var(--brand);color:#fff}
+.proof{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin:24px 0 0;padding:0;list-style:none;font-size:.82rem;color:var(--muted)}
+.proof li::before{content:"✓ ";color:var(--brand);font-weight:700}
+.hero-img{margin:0 auto;max-width:520px;width:100%;border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(145deg,#ece6fb,#fbe3d6);display:grid;place-items:center;color:var(--muted);font-size:.85rem;text-align:center;padding:16px}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+@media(min-width:800px){
+ .hero .wrap{grid-template-columns:1fr 1fr;text-align:left}
+ .cta,.proof{justify-content:flex-start}.hero .tag{margin-left:0}.hero-img{max-width:none}
+}
+/* watch now */
+.rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.vcard{position:relative;width:100%;aspect-ratio:9/16;border-radius:18px;overflow:hidden;border:0;padding:0;cursor:pointer;color:#fff;background:linear-gradient(145deg,#00C08B,#1a8163);transition:transform .2s}
+.vcard::before{content:"";position:absolute;left:50%;top:24%;width:58%;aspect-ratio:926/252;transform:translateX(-50%);background:#fff;-webkit-mask:url("data:image/svg+xml,%3Csvg viewBox=%220 0 926 252%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M828.298 118.376V184.659C828.824 205.702 845.658 212.014 867.753 206.754V249.89C822.512 258.833 783.584 238.843 783.584 192.55V118.376H753.072V75.7657H783.057V27.8945H827.772V75.7657H867.226V118.376H828.298Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M283.837 72.6094C288.045 72.6094 292.254 73.1354 295.936 74.7136V124.163C292.78 123.111 289.624 122.585 285.941 122.059C264.899 118.902 232.81 129.423 232.81 165.195V246.734H188.095V75.7657H232.81V105.225C242.279 82.0784 262.269 72.6094 283.837 72.6094Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M311.715 28.4236C311.189 13.1679 323.288 0.542582 338.544 0.0165259C353.799 -0.50953 366.425 11.5898 366.951 26.8454C367.477 42.101 355.377 54.7264 340.122 55.2524C339.596 55.2524 339.596 55.2524 339.07 55.2524C324.34 55.2524 312.241 43.1531 311.715 28.4236ZM316.975 75.7686H362.216V246.737H316.975V75.7686Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M734.135 75.7695V246.738H688.894V227.8C678.373 243.055 660.487 251.472 636.815 251.472C599.991 251.472 571.058 226.222 571.058 180.455V75.7695H615.772V175.194C615.772 198.341 629.976 210.44 650.492 210.44C672.586 210.44 688.894 197.815 688.894 167.829V75.7695H734.135Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M134.435 178.877C124.44 203.075 96.5586 214.123 72.36 204.127C48.1615 194.132 37.1143 166.251 47.1093 142.053C57.1044 117.854 84.9854 106.807 109.184 116.802C119.705 121.537 128.122 129.427 133.383 139.949L133.909 140.475L173.889 121.011L173.363 119.958C151.268 74.7176 96.5586 55.7795 51.3178 77.8739C6.07695 99.9683 -12.8611 154.678 9.23329 199.919C31.3277 245.16 86.0375 264.098 131.278 242.003C151.269 232.534 166.524 215.701 175.467 195.711L175.993 195.184L134.961 177.825L134.435 178.877Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M517.398 177.825L516.872 178.351C506.877 202.549 478.996 213.596 454.798 203.601C430.599 193.606 419.552 165.725 429.547 141.527C439.542 117.328 467.423 106.281 491.621 116.276C502.143 121.011 510.56 128.901 515.82 139.422L516.346 139.949L556.326 120.484L555.8 119.958C533.706 74.7176 478.996 55.7795 433.755 77.8739C388.514 99.9683 369.576 154.678 391.671 199.919C413.765 245.16 468.475 264.098 513.716 242.003C533.706 232.534 548.962 215.701 557.905 195.711L558.431 195.184L517.398 177.825Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M900.903 223.591H908.268C911.424 223.065 914.055 225.695 914.581 228.851C914.581 229.377 914.581 229.377 914.581 229.903C914.581 233.06 912.477 235.164 909.846 235.69C909.846 235.69 909.846 235.69 909.32 235.69L917.211 245.159H913.529L905.638 235.69H903.534V245.159H900.903V223.591ZM907.742 232.534C910.372 232.534 911.424 231.482 911.424 229.377C911.424 227.273 909.846 226.221 907.742 226.221H903.534V232.534H907.742Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M907.733 218.857C916.15 218.857 922.988 225.696 922.988 234.112C922.988 242.529 916.15 249.368 907.733 249.368C899.316 249.368 892.477 242.529 892.477 234.112C892.477 225.696 899.316 218.857 907.733 218.857ZM907.733 216.227C897.738 216.227 889.847 224.117 889.847 234.112C889.847 244.108 897.738 251.998 907.733 251.998C917.728 251.998 925.619 244.108 925.619 234.112C925.619 224.643 917.728 216.753 907.733 216.227Z%22 fill=%22%23000%22/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg viewBox=%220 0 926 252%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M828.298 118.376V184.659C828.824 205.702 845.658 212.014 867.753 206.754V249.89C822.512 258.833 783.584 238.843 783.584 192.55V118.376H753.072V75.7657H783.057V27.8945H827.772V75.7657H867.226V118.376H828.298Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M283.837 72.6094C288.045 72.6094 292.254 73.1354 295.936 74.7136V124.163C292.78 123.111 289.624 122.585 285.941 122.059C264.899 118.902 232.81 129.423 232.81 165.195V246.734H188.095V75.7657H232.81V105.225C242.279 82.0784 262.269 72.6094 283.837 72.6094Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M311.715 28.4236C311.189 13.1679 323.288 0.542582 338.544 0.0165259C353.799 -0.50953 366.425 11.5898 366.951 26.8454C367.477 42.101 355.377 54.7264 340.122 55.2524C339.596 55.2524 339.596 55.2524 339.07 55.2524C324.34 55.2524 312.241 43.1531 311.715 28.4236ZM316.975 75.7686H362.216V246.737H316.975V75.7686Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M734.135 75.7695V246.738H688.894V227.8C678.373 243.055 660.487 251.472 636.815 251.472C599.991 251.472 571.058 226.222 571.058 180.455V75.7695H615.772V175.194C615.772 198.341 629.976 210.44 650.492 210.44C672.586 210.44 688.894 197.815 688.894 167.829V75.7695H734.135Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M134.435 178.877C124.44 203.075 96.5586 214.123 72.36 204.127C48.1615 194.132 37.1143 166.251 47.1093 142.053C57.1044 117.854 84.9854 106.807 109.184 116.802C119.705 121.537 128.122 129.427 133.383 139.949L133.909 140.475L173.889 121.011L173.363 119.958C151.268 74.7176 96.5586 55.7795 51.3178 77.8739C6.07695 99.9683 -12.8611 154.678 9.23329 199.919C31.3277 245.16 86.0375 264.098 131.278 242.003C151.269 232.534 166.524 215.701 175.467 195.711L175.993 195.184L134.961 177.825L134.435 178.877Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M517.398 177.825L516.872 178.351C506.877 202.549 478.996 213.596 454.798 203.601C430.599 193.606 419.552 165.725 429.547 141.527C439.542 117.328 467.423 106.281 491.621 116.276C502.143 121.011 510.56 128.901 515.82 139.422L516.346 139.949L556.326 120.484L555.8 119.958C533.706 74.7176 478.996 55.7795 433.755 77.8739C388.514 99.9683 369.576 154.678 391.671 199.919C413.765 245.16 468.475 264.098 513.716 242.003C533.706 232.534 548.962 215.701 557.905 195.711L558.431 195.184L517.398 177.825Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M900.903 223.591H908.268C911.424 223.065 914.055 225.695 914.581 228.851C914.581 229.377 914.581 229.377 914.581 229.903C914.581 233.06 912.477 235.164 909.846 235.69C909.846 235.69 909.846 235.69 909.32 235.69L917.211 245.159H913.529L905.638 235.69H903.534V245.159H900.903V223.591ZM907.742 232.534C910.372 232.534 911.424 231.482 911.424 229.377C911.424 227.273 909.846 226.221 907.742 226.221H903.534V232.534H907.742Z%22 fill=%22%23000%22/%3E%3Cpath d=%22M907.733 218.857C916.15 218.857 922.988 225.696 922.988 234.112C922.988 242.529 916.15 249.368 907.733 249.368C899.316 249.368 892.477 242.529 892.477 234.112C892.477 225.696 899.316 218.857 907.733 218.857ZM907.733 216.227C897.738 216.227 889.847 224.117 889.847 234.112C889.847 244.108 897.738 251.998 907.733 251.998C917.728 251.998 925.619 244.108 925.619 234.112C925.619 224.643 917.728 216.753 907.733 216.227Z%22 fill=%22%23000%22/%3E%3C/svg%3E") center/contain no-repeat}
+.vcard:hover{transform:translateY(-3px)}
+/* Events carousel */
+.cbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px}
+.cb{width:44px;height:44px;flex:none;border-radius:50%;border:0;padding:0;background:#f3f3f4;color:#0b0b0f;display:grid;place-items:center;cursor:pointer;transition:opacity .2s}
+.cb[disabled]{opacity:.35;cursor:default}
+.dots{display:flex;align-items:center;gap:8px}
+.dots button{width:10px;height:10px;border-radius:99px;border:0;padding:0;background:#d0d0d4;cursor:pointer;transition:width .2s,background .2s}
+.dots button.on{width:30px;background:var(--brand)}
+.track{display:flex;gap:var(--gap);overflow-x:auto;padding-top:4px;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+/* white edge fade (left/right) on carousels; each side shows only when more videos are off-screen */
+@property --fl{syntax:"<length>";inherits:false;initial-value:0px}
+@property --fr{syntax:"<length>";inherits:false;initial-value:0px}
+.track{--fl:0px;--fr:0px;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 var(--fl),#000 calc(100% - var(--fr)),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 var(--fl),#000 calc(100% - var(--fr)),transparent 100%);transition:--fl .25s,--fr .25s}
+.track.fade-l{--fl:clamp(28px,7vw,72px)}
+.track.fade-r{--fr:clamp(28px,7vw,72px)}
+.track.marquee{--fl:clamp(28px,7vw,72px);--fr:clamp(28px,7vw,72px);scroll-snap-type:none;scroll-behavior:auto;overscroll-behavior-x:contain}
+.track .vcard{width:auto;flex:0 0 calc((100% - 2*var(--gap))/3);scroll-snap-align:start}
+@media(max-width:760px){.track .vcard{flex-basis:62%}}
+.vcard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.vcard .pl{position:absolute;left:50%;top:50%;width:54px;height:54px;transform:translate(-50%,-50%);border-radius:50%;background:rgba(0,0,0,.4);display:grid;place-items:center}
+.vcard .pl svg{width:24px;height:24px;fill:#fff;margin-left:3px}
+.vcard .ttl{position:absolute;left:10px;right:10px;bottom:12px;text-align:left;font-weight:700;font-size:.92rem;line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.vcard .ttl small{display:block;font-weight:500;font-size:.75rem;opacity:.9;margin-top:3px}
+.vcard::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.65))}
+.vcard .pl,.vcard .ttl{z-index:2}
+@media(max-width:560px){.vcard{border-radius:12px}.vcard .pl{width:38px;height:38px}.vcard .pl svg{width:17px;height:17px}.vcard .ttl{font-size:.74rem;left:7px;right:7px;bottom:8px}.vcard .ttl small{font-size:.64rem}}
+/* footer social icons */
+.lc{display:block;width:100%;text-align:center;margin:0 auto 10px;font-size:.85rem;color:var(--muted)}
+.social{display:flex;justify-content:center;align-items:center;width:100%;gap:14px;margin:0 auto 18px}
+.social a{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--soft);color:var(--fg);transition:background .15s,color .15s}
+.social a:hover{background:var(--brand);color:#fff}
+.social svg{width:20px;height:20px;display:block}
+.nb{white-space:nowrap}
+/* as seen on */
+.seen{text-align:center;padding-top:clamp(28px,5vw,48px)}
+.seen p{margin:0 0 12px;font-size:.9rem;color:var(--muted)}
+.seen ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 22px}
+.seen li{font-size:.9rem;font-weight:500;line-height:1.3;white-space:nowrap}
+@media(min-width:760px){.seen ul{flex-wrap:nowrap;gap:12px 36px}}
+/* modal - story-style player */
+.modal{position:fixed;inset:0;z-index:999;display:none;background:rgba(10,10,14,.96);overscroll-behavior:contain}
+.modal.open{display:block}
+.mbox{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,40px);padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));color:#fff}
+.stage{position:relative;flex:none;width:min(calc(100vw - 24px),calc(94vh*9/16),520px);width:min(calc(100vw - 24px),calc(94dvh*9/16),520px);aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.vid{position:absolute;inset:0}
+.vid video{width:100%;height:100%;object-fit:contain;background:#000}
+.vid .none{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:#bbb;font-size:.9rem}
+.mhead{position:absolute;top:0;left:0;right:0;z-index:3;padding:12px 14px 30px;display:grid;gap:12px;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
+.mhead>*{pointer-events:auto}
+.seg{display:flex;gap:4px}
+.seg i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+.seg b{display:block;height:100%;width:0;background:#fff}
+.seg i.done b{width:100%}
+.mid{display:flex;align-items:center;gap:10px}
+.mav{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:#fff;font:700 .85rem var(--font);box-shadow:0 0 0 2px #fff}
+.mwho{flex:1;min-width:0;line-height:1.25}
+.mwho b{display:block;font-size:.98rem;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.mwho a{display:block;color:rgba(255,255,255,.9);font-size:.8rem;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.mic{flex:none;position:relative;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mic svg,.mnb svg{display:block;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mic svg{width:22px;height:22px}
+.mic.buy{background:var(--brand)}
+.mic .ct{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#fff;color:#0b0b0f;font:700 .68rem/18px var(--font);text-align:center}
+.mcap{position:absolute;left:14px;right:14px;bottom:64px;z-index:2;font-weight:700;font-size:1rem;line-height:1.25;text-shadow:0 1px 8px rgba(0,0,0,.85);pointer-events:none}
+.msheet{position:absolute;left:0;right:0;bottom:0;z-index:5;max-height:72%;overflow:auto;background:#1b1b22;border-radius:20px 20px 0 0;padding:0 14px max(16px,env(safe-area-inset-bottom));transform:translateY(105%);visibility:hidden;transition:transform .25s,visibility .25s}
+.msheet.open{transform:none;visibility:visible}
+.msheet .grab{display:block;width:100%;height:26px;border:0;background:none;padding:0;cursor:pointer;position:relative}
+.msheet .grab::before{content:"";position:absolute;left:50%;top:10px;width:44px;height:5px;margin-left:-22px;border-radius:3px;background:#4a4a55}
+.msheet h3{margin:0 0 2px;font-size:1.1rem;letter-spacing:-.01em}
+.msheet p{margin:0 0 12px;color:#b5b5bd;font-size:.85rem}
+.uses{list-style:none;margin:0;padding:0;display:grid;gap:var(--gap)}
+.uses li{display:flex;align-items:center;gap:12px;background:#26262e;border-radius:14px;padding:10px 10px 10px 14px}
+.uses .n{flex:1;min-width:0;font-size:.92rem;line-height:1.25}
+.uses .n small{display:block;color:#9a9aa4;margin-top:2px}
+.uses a{flex:none;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;font-size:.82rem;padding:10px 14px;border-radius:99px}
+.mnb{flex:none;width:52px;height:52px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .15s;-webkit-tap-highlight-color:transparent}
+.mnb:hover{background:rgba(255,255,255,.26)}
+.mnb svg{width:24px;height:24px;stroke-width:2.5}
+@media(max-width:700px){.mnb{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;z-index:4;background:rgba(0,0,0,.4)}#mp{left:max(16px,env(safe-area-inset-left))}#mn{right:max(16px,env(safe-area-inset-right))}.mnb svg{width:20px;height:20px}}
+/* find your machine */
+.q{display:grid;gap:var(--gap);margin:var(--gap) 0 0}
+@media(min-width:640px){.q{grid-template-columns:repeat(3,1fr)}}
+.opt{padding:var(--card);border-radius:16px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);text-align:left;font:500 .95rem/1.3 var(--font);cursor:pointer;transition:border-color .15s,background .15s}
+.opt b{display:block;font-size:1rem;margin-bottom:3px}
+.opt span{color:var(--muted);font-size:.82rem}
+.opt:hover{border-color:var(--brand)}
+.opt[aria-pressed=true]{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 10%,var(--bg))}
+.machines{display:grid;gap:var(--gap)}
+@media(min-width:760px){.machines{grid-template-columns:repeat(3,1fr)}}
+.mc{display:flex;flex-direction:column;gap:8px;padding:var(--card);border-radius:20px;background:var(--soft);border:2px solid transparent;transition:border-color .2s,transform .2s}
+.mc.pick{border-color:var(--brand);transform:translateY(-3px)}
+.mc .badge{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--brand)}
+.mc h3{margin:0;font-size:1.3rem;letter-spacing:-.02em}
+.mc .pr{font-weight:600}
+.mc p{margin:0 0 8px;color:var(--muted);font-size:.9rem;flex:1}
+.mc .btn{min-height:44px;font-size:.88rem}
+/* learn */
+.learn{display:grid;gap:var(--gap)}
+@media(min-width:700px){.learn{grid-template-columns:1fr 1fr}}
+.wk{padding:var(--card);border-radius:20px;background:var(--soft);display:flex;flex-direction:column;gap:8px}
+.wk h3{margin:0;font-size:1.3rem;letter-spacing:-.02em}
+.wk ul{margin:0 0 8px;padding-left:1.1em;color:var(--muted);font-size:.92rem}
+.wk{min-width:0}
+.wk li{overflow-wrap:break-word}
+.wk h4{margin:8px 0 0;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:var(--brand)}
+.wk .d{margin:0 0 4px;color:var(--muted);font-size:.92rem;line-height:1.45}
+.wk ul.inc{list-style:none;padding-left:0}
+.wk ul.inc li{position:relative;padding-left:1.5em}
+.wk ul.inc li::before{content:"✓";position:absolute;left:0;color:var(--brand);font-weight:700}
+.wk ul{flex:0 0 auto}
+.wk .note{margin:0 0 8px;font-size:.82rem;color:var(--muted)}
+.wk .btn{align-self:flex-start;margin-top:auto}
+/* about + footer */
+.about p{max-width:860px;margin:0 auto 1.2em;text-align:center;line-height:1.6}
+footer{margin-top:var(--section);border-top:1px solid var(--line);padding:32px 0 calc(32px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:.8rem}
+footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* hero: download app line with blinking dot */
+.dl{display:inline-flex;align-items:baseline;gap:8px;margin:0 0 14px;font-size:.8rem;font-weight:500;color:var(--muted);text-decoration:none}
+.dl .cl{height:1.3em;width:auto;display:block;flex:none}
+.dl a{display:inline-flex;transition:opacity .15s}
+.dl a:hover{opacity:.7}
+.dl .dot{align-self:center;position:relative;top:1.2px;width:8px;height:8px;border-radius:50%;background:var(--brand);flex:none;animation:blink 1.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+@media(prefers-reduced-motion:reduce){.dl .dot{animation:none}}
+/* hero: Find Your Machine as a black button */
+.hero .btn.alt{background:var(--fg);color:var(--bg)}
+:root{--hover:#1a8163}
+.cc button{transition:background .15s,color .15s}
+/* MY / SG: no green button; only the text turns green on hover */
+.cc button:hover,.cc button[aria-pressed="true"]:hover{background:transparent;color:var(--hover)}
+/* About: left-aligned on desktop, centred on mobile (footer stays centred everywhere) */
+@media(min-width:700px){
+  .about h2.big{text-align:left}
+  .about p{text-align:left;margin-left:0;margin-right:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <b class="brand-lockup"><span class="bn">Fajar Siddiq</span></b>
+    <ul>
+      <li><a href="#watch">Watch</a></li>
+      <li><a href="#machine">Machines</a></li>
+      <li><a href="#shared">Projects</a></li>
+      <li><a href="#learn">Learn</a></li>
+    </ul>
+    <div class="navr">
+      <a class="deal" href="https://cricut.com/en-us/cricut-access-exclusives" target="_blank" rel="noopener">Subscriber Deals</a>
+    <div class="cc" role="group" aria-label="Choose your country">
+      <button type="button" data-c="SG" aria-pressed="false" aria-label="Singapore" title="Singapore"><svg class="fl" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="10" fill="#EF3340"/><rect y="10" width="28" height="10" fill="#fff"/><circle cx="5.6" cy="5" r="3.6" fill="#fff"/><circle cx="7.1" cy="5" r="3.6" fill="#EF3340"/><g fill="#fff"><polygon points="10.60,0.95 10.85,1.66 11.60,1.68 11.00,2.13 11.22,2.85 10.60,2.42 9.98,2.85 10.20,2.13 9.60,1.68 10.35,1.66"/><polygon points="13.45,3.02 13.70,3.73 14.45,3.75 13.85,4.20 14.07,4.92 13.45,4.49 12.84,4.92 13.05,4.20 12.45,3.75 13.21,3.73"/><polygon points="12.36,6.38 12.61,7.09 13.36,7.10 12.76,7.56 12.98,8.28 12.36,7.85 11.75,8.28 11.96,7.56 11.36,7.10 12.12,7.09"/><polygon points="8.84,6.38 9.08,7.09 9.84,7.10 9.24,7.56 9.45,8.28 8.84,7.85 8.22,8.28 8.44,7.56 7.84,7.10 8.59,7.09"/><polygon points="7.75,3.02 7.99,3.73 8.75,3.75 8.15,4.20 8.36,4.92 7.75,4.49 7.13,4.92 7.35,4.20 6.75,3.75 7.50,3.73"/></g></svg><span>SG</span></button>
+      <button type="button" data-c="MY" aria-pressed="true" aria-label="Malaysia" title="Malaysia"><svg class="fl" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#fff"/><rect y="0.000" width="28" height="1.449" fill="#CC0001"/><rect y="2.857" width="28" height="1.449" fill="#CC0001"/><rect y="5.714" width="28" height="1.449" fill="#CC0001"/><rect y="8.571" width="28" height="1.449" fill="#CC0001"/><rect y="11.429" width="28" height="1.449" fill="#CC0001"/><rect y="14.286" width="28" height="1.449" fill="#CC0001"/><rect y="17.143" width="28" height="1.449" fill="#CC0001"/><rect width="14" height="10" fill="#010066"/><circle cx="5.4" cy="5" r="3.1" fill="#FC0"/><circle cx="6.3" cy="5" r="2.55" fill="#010066"/><g fill="#FC0"><polygon points="9.70,2.50 10.13,4.10 11.65,3.44 10.67,4.78 12.14,5.56 10.48,5.62 10.78,7.25 9.70,6.00 8.62,7.25 8.92,5.62 7.26,5.56 8.73,4.78 7.75,3.44 9.27,4.10"/></g></svg><span>MY</span></button>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="dl"><i class="dot" aria-hidden="true"></i><span>Recommended Tool:</span><a href="https://design.cricut.com/" target="_blank" rel="noopener" aria-label="Cricut Design Space"><svg class="cl" role="img" aria-label="Cricut" viewBox="0 0 926 252" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M828.298 118.376V184.659C828.824 205.702 845.658 212.014 867.753 206.754V249.89C822.512 258.833 783.584 238.843 783.584 192.55V118.376H753.072V75.7657H783.057V27.8945H827.772V75.7657H867.226V118.376H828.298Z" fill="#00C08B"/><path d="M283.837 72.6094C288.045 72.6094 292.254 73.1354 295.936 74.7136V124.163C292.78 123.111 289.624 122.585 285.941 122.059C264.899 118.902 232.81 129.423 232.81 165.195V246.734H188.095V75.7657H232.81V105.225C242.279 82.0784 262.269 72.6094 283.837 72.6094Z" fill="#00C08B"/><path d="M311.715 28.4236C311.189 13.1679 323.288 0.542582 338.544 0.0165259C353.799 -0.50953 366.425 11.5898 366.951 26.8454C367.477 42.101 355.377 54.7264 340.122 55.2524C339.596 55.2524 339.596 55.2524 339.07 55.2524C324.34 55.2524 312.241 43.1531 311.715 28.4236ZM316.975 75.7686H362.216V246.737H316.975V75.7686Z" fill="#00C08B"/><path d="M734.135 75.7695V246.738H688.894V227.8C678.373 243.055 660.487 251.472 636.815 251.472C599.991 251.472 571.058 226.222 571.058 180.455V75.7695H615.772V175.194C615.772 198.341 629.976 210.44 650.492 210.44C672.586 210.44 688.894 197.815 688.894 167.829V75.7695H734.135Z" fill="#00C08B"/><path d="M134.435 178.877C124.44 203.075 96.5586 214.123 72.36 204.127C48.1615 194.132 37.1143 166.251 47.1093 142.053C57.1044 117.854 84.9854 106.807 109.184 116.802C119.705 121.537 128.122 129.427 133.383 139.949L133.909 140.475L173.889 121.011L173.363 119.958C151.268 74.7176 96.5586 55.7795 51.3178 77.8739C6.07695 99.9683 -12.8611 154.678 9.23329 199.919C31.3277 245.16 86.0375 264.098 131.278 242.003C151.269 232.534 166.524 215.701 175.467 195.711L175.993 195.184L134.961 177.825L134.435 178.877Z" fill="#00C08B"/><path d="M517.398 177.825L516.872 178.351C506.877 202.549 478.996 213.596 454.798 203.601C430.599 193.606 419.552 165.725 429.547 141.527C439.542 117.328 467.423 106.281 491.621 116.276C502.143 121.011 510.56 128.901 515.82 139.422L516.346 139.949L556.326 120.484L555.8 119.958C533.706 74.7176 478.996 55.7795 433.755 77.8739C388.514 99.9683 369.576 154.678 391.671 199.919C413.765 245.16 468.475 264.098 513.716 242.003C533.706 232.534 548.962 215.701 557.905 195.711L558.431 195.184L517.398 177.825Z" fill="#00C08B"/><path d="M900.903 223.591H908.268C911.424 223.065 914.055 225.695 914.581 228.851C914.581 229.377 914.581 229.377 914.581 229.903C914.581 233.06 912.477 235.164 909.846 235.69C909.846 235.69 909.846 235.69 909.32 235.69L917.211 245.159H913.529L905.638 235.69H903.534V245.159H900.903V223.591ZM907.742 232.534C910.372 232.534 911.424 231.482 911.424 229.377C911.424 227.273 909.846 226.221 907.742 226.221H903.534V232.534H907.742Z" fill="#00C08B"/><path d="M907.733 218.857C916.15 218.857 922.988 225.696 922.988 234.112C922.988 242.529 916.15 249.368 907.733 249.368C899.316 249.368 892.477 242.529 892.477 234.112C892.477 225.696 899.316 218.857 907.733 218.857ZM907.733 216.227C897.738 216.227 889.847 224.117 889.847 234.112C889.847 244.108 897.738 251.998 907.733 251.998C917.728 251.998 925.619 244.108 925.619 234.112C925.619 224.643 917.728 216.753 907.733 216.227Z" fill="#00C08B"/></svg></a></div>
+      <h1>DIY &amp; Craft for <em>Beginners</em> and <em>Business.</em></h1>
+      <p class="tag">Make stickers, vinyl, <span class="nb">iron-on</span>, <span class="nb">t-shirts</span> and gifts at home to studio. Start for fun, then sell what you make.</p>
+      <div class="cta">
+        <a class="btn brand" href="#watch">Watch Now</a>
+        <a class="btn alt" href="#machine">Buy Now</a>
+      </div>
+      <ul class="proof">
+        <li>Every item linked</li>
+        <li>For Singapore &amp; Malaysia</li>
+      </ul>
+    </div>
+    <div class="hero-img"><img src="images/hero.webp" alt="Fajar Siddiq with his Cricut machine" onerror="this.parentNode.textContent='Photo goes here: images/hero.webp'"></div>
+  </div>
+</header>
+
+<section class="wrap seen" aria-label="As seen on">
+  <p>As seen on:</p>
+  <ul>
+    <li>Merajuk</li>
+    <li>Makers Merch</li>
+    <li>Dement Clothing</li>
+    <li>Laptop With Stickers</li>
+    <li>Bynoorwa</li>
+    <li>Jomstart</li>
+  </ul>
+</section>
+
+<section class="wrap" id="watch">
+  <h2 class="big">Watch Now<small>Tap a video, then buy exactly what I used</small></h2>
+  <div class="track" id="rail"></div>
+  <div class="cbar" id="railBar">
+    <button type="button" class="cb" data-d="-1" aria-label="Previous" disabled><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <div class="dots" role="tablist"></div>
+    <button type="button" class="cb" data-d="1" aria-label="Next"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</section>
+
+<section class="wrap" id="machine">
+  <h2 class="big">Find Your Machine<small>Not sure which one? Tell me what you want to make.</small></h2>
+  <div class="machines" id="machines"></div>
+  <div class="q" id="quiz" role="group" aria-label="What do you want to make?"></div>
+</section>
+
+<section class="wrap" id="events">
+  <h2 class="big">Events &amp; Meet-Ups<small>Cricut Socials &amp; Open House</small></h2>
+  <div class="track" id="evTrack"></div>
+  <div class="cbar" id="evBar">
+    <button type="button" class="cb" data-d="-1" aria-label="Previous" disabled><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+    <div class="dots" role="tablist"></div>
+    <button type="button" class="cb" data-d="1" aria-label="Next"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </div>
+</section>
+
+<section class="wrap" id="shared">
+  <h2 class="big">Shared Projects<small>Follow me on Cricut Design Space</small></h2>
+  <div class="sp" id="sp"></div>
+</section>
+
+<section class="wrap" id="learn">
+  <h2 class="big">Learn With Me<small>Beginner-friendly and business-focused Cricut workshops</small></h2>
+  <div class="learn" id="workshops"></div>
+</section>
+
+<section class="wrap about">
+  <h2 class="big">Hi, I'm Fajar Siddiq.<small>Follow me on @fajarsiddiq <a href="https://fajarsiddiq.com/tiktok" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</a>, <a href="https://fajarsiddiq.com/instagram" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3"/></svg>Instagram</a>, <a href="https://fajarsiddiq.com/youtube" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M6.5 4.5h11A4.5 4.5 0 0122 9v6a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 15V9a4.5 4.5 0 014.5-4.5zM10 8.6v6.8l5.8-3.4L10 8.6z"/></svg>YouTube</a></small></h2>
+  <p>I'm a Business Owner &amp; Founder of <a href="https://euphorya.co" target="_blank" rel="noopener">Euphorya</a> from Singapore and currently based in Malaysia. I'm building 5+ Brands using Cricut and I'm an Influencer/KOL for <a href="https://www.instagram.com/cricut_sgmy/" target="_blank" rel="noopener">@cricut_sgmy</a> “Cricut – Singapore + Malaysia”. I've also collaborated with Cricut Ambassadors and other Business Owners &amp; Founders.</p>
+  <p>I started with Cricut as a hobby making stickers and vinyl pieces plus <span class="nb">iron-on</span> <span class="nb">t-shirts</span> and small gifts at home. Now I've turned that same machine into a way to build real brands and sell what I make. Everything on this website comes from that hands-on experience. My videos show the exact projects I made and list the machines, tools and materials I used so you can find and buy them in one tap. I also share workshops, Cricut socials, meet-ups, tips and fresh project ideas with the maker community. Whether you're picking up your first Cricut or ready to sell to customers in Malaysia and Singapore my goal is to keep it simple, honest and beginner-friendly so you can create with confidence and grow at your own pace.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="lc">View Fajar Siddiq's <a href="https://media.fajarsiddiq.com/" target="_blank" rel="noopener">Media Kit</a></p>
+    <div class="social"><a href="https://fajarsiddiq.com/tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://fajarsiddiq.com/instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3"/></svg></a><a href="https://fajarsiddiq.com/youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M6.5 4.5h11A4.5 4.5 0 0122 9v6a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 15V9a4.5 4.5 0 014.5-4.5zM10 8.6v6.8l5.8-3.4L10 8.6z"/></svg></a></div>
+    <p>Cricut makes smart cutting machines, the Design Space app, and the tools and materials people use to turn their ideas into handmade things at home, like custom cards, mugs, <span class="nb">t-shirts</span> and home décor, but this website is my own independent project that isn't run by Cricut, and I'm a Cricut user and affiliate who runs creative workshops through <a href="https://jomstart.com" target="_blank" rel="noopener">jomstart.com</a> as an independent creator not affiliated with, sponsored by or endorsed by Cricut, Inc., so for official product information please visit <a href="https://cricut.com" target="_blank" rel="noopener">cricut.com</a>, while the "Buy on Shopee" links on this website are affiliate links, meaning Shopee may pay me a commission if you buy through one, at no extra cost to you and without changing what I recommend, and I only list products I have actually used in the videos shown here, though prices, stock and product details are set by the sellers on Shopee and can change at any time, so please check the listing before you buy.</p>
+    <p>© <span id="yr"></span> <a href="https://fajarsiddiq.com/">Fajar Siddiq</a></p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="mbox">
+    <button class="mnb" id="mp" aria-label="Previous video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="stage" id="stage">
+      <div class="vid" id="vid"></div>
+      <div class="mhead">
+        <div class="seg" id="seg"></div>
+        <div class="mid">
+          <span class="mav" aria-hidden="true">FS</span>
+          <div class="mwho"><b>Fajar Siddiq</b><a href="https://cricut.fajarsiddiq.com" target="_blank" rel="noopener">cricut.fajarsiddiq.com</a></div>
+          <button class="mic buy" id="mb" type="button" aria-label="Buy what I used in this video" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><span class="ct" id="mct"></span></button>
+          <button class="mic" id="mx" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </div>
+      </div>
+      <div class="mcap" id="mt"></div>
+      <div class="msheet" id="sheet">
+        <button class="grab" id="sx" type="button" aria-label="Hide list"></button>
+        <h3>Buy what I used</h3>
+        <p>Tap a button to open it on Shopee</p>
+        <ul class="uses" id="uses"></ul>
+      </div>
+    </div>
+    <button class="mnb" id="mn" aria-label="Next video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</div>
+
+<script>
+/* =====================================================
+   EDIT THIS PART ONLY. Replace the sample text and links.
+   Shopee links: paste your affiliate link for each country, MY and SG (each starts with https://).
+   Leave one empty and that country gets a Shopee search link instead.
+   ===================================================== */
+// Shopee search page per country (used until you paste real links)
+const SEARCH = { MY:"https://shopee.com.my/search?keyword=", SG:"https://shopee.sg/search?keyword=" };
+const JOMSTART = "https://jomstart.com";
+const DESIGNSPACE = "";   // paste your Cricut Design Space profile link here (starts with https://) to show a button under Shared Projects
+
+// Videos: "video" = link to your .mp4, "url" = Instagram/TikTok link (used if no video yet),
+// "uses" = everything you used in that video.
+const VIDEOS = [
+  { title:"Custom sticker sheet", tag:"Beginner", video:"", url:"", uses:[
+    { name:"Cricut machine", note:"The one I used", links:{MY:"",SG:""} },
+    { name:"Printable sticker paper", note:"Pack of 20", links:{MY:"",SG:""} },
+    { name:"Standard grip mat", note:"12 x 12 in", links:{MY:"",SG:""} } ] },
+  { title:"Iron-on tote bag", tag:"Beginner", video:"", url:"", uses:[
+    { name:"Iron-on vinyl", note:"Black", links:{MY:"",SG:""} },
+    { name:"Weeding tools set", note:"", links:{MY:"",SG:""} },
+    { name:"Canvas tote bag", note:"", links:{MY:"",SG:""} } ] },
+  { title:"Name labels to sell", tag:"Business", video:"", url:"", uses:[
+    { name:"Permanent vinyl", note:"Assorted colours", links:{MY:"",SG:""} },
+    { name:"Transfer tape", note:"", links:{MY:"",SG:""} } ] }
+];
+/* Events & Meet-Ups videos (vertical). Put the video file name in video:"" or leave empty for now. */
+const EVENTS = [
+  { title:"Cricut Social", tag:"Singapore", video:"", url:"" },
+  { title:"Cricut Open House", tag:"Singapore", video:"", url:"" },
+  { title:"Cricut Social", tag:"Malaysia", video:"", url:"" },
+  { title:"Cricut Open House", tag:"Malaysia", video:"", url:"" },
+  { title:"Maker Meet-Up", tag:"Community", video:"", url:"" }
+];
+
+// Machines: "for" = the quiz answer (fun / sell / big) this machine matches.
+const MACHINES = [
+  { id:"sell", name:"Cricut Explore 5", badge:"Best for starting a business", prices:{MY:"RM ___",SG:"S$ ___"}, links:{MY:"",SG:""}, text:"Cuts a wide range of materials. A solid choice to start selling." },
+  { id:"big",  name:"Cricut Maker 5",   badge:"Most powerful", prices:{MY:"RM ___",SG:"S$ ___"}, links:{MY:"",SG:""}, text:"Handles thicker materials and fabric. Pick this for bigger projects." },
+  { id:"fun",  name:"Cricut Joy 2",     badge:"Easiest start", prices:{MY:"RM ___",SG:"S$ ___"}, links:{MY:"",SG:""}, text:"Small, simple and quick. Great for cards, labels and stickers." }
+];
+const QUIZ = [
+  { id:"fun",  t:"Fun and gifts",    s:"Stickers, cards, labels" },
+  { id:"sell", t:"Sell what I make", s:"Start a small business" },
+  { id:"big",  t:"Big or thick jobs", s:"Fabric, wood, more" }
+];
+
+// Workshops (links go to jomstart.com)
+const WORKSHOPS = [
+  { t:"Cricut for Beginners",
+    d:"For first-time Cricut owners who want to start with confidence and make something real from day one.",
+    pts:["Set up your machine","Make your first 3 projects","Avoid common mistakes"],
+    tt:"Projects covered", topics:["Vinyl Project","Iron-on Project","Print then Cut Sticker"],
+    inc:["Hands-on, step-by-step guidance","List of tools and materials used, with buy links","Q&A and tips from my own experience"],
+    link:JOMSTART },
+  { t:"Cricut for Business",
+    d:"For makers ready to turn their designs into products and start selling to real customers.",
+    pts:["Pick products that sell","Price and package them","Find your first customers"],
+    tt:"Topics covered", topics:["Pricing, costing and profit","Branding and packaging","Selling online and getting your first sales"],
+    inc:["Real examples from the brands I'm building","Practical pricing, packaging and selling tips","Q&A on starting your own Cricut business"],
+    link:JOMSTART }
+];
+
+/* ============ Nothing below needs editing ============ */
+const $=s=>document.querySelector(s), el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+/* Country (MY / SG): remembered on this device, guessed from the time zone the first time */
+let CC="MY";
+try{CC=localStorage.getItem("cc")||(Intl.DateTimeFormat().resolvedOptions().timeZone==="Asia/Singapore"?"SG":"MY");}catch(e){}
+if(CC!=="MY"&&CC!=="SG")CC="MY";
+const buy=(it)=>((it.links||{})[CC])||(SEARCH[CC]+encodeURIComponent(it.name+" cricut"));
+$("#yr").textContent=new Date().getFullYear();
+
+/* Watch Now rail */
+const PLAY='<span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg></span>';
+VIDEOS.forEach((v,i)=>{
+  const b=el("button","vcard",PLAY+'<span class="ttl">'+esc(v.title)+'<small>'+esc(v.tag||"")+' · '+v.uses.length+' items</small></span>');
+  b.type="button"; b.setAttribute("aria-label","Watch: "+v.title);
+  if(v.video){const t=document.createElement("video");t.src=v.video+"#t=0.8";t.muted=true;t.playsInline=true;t.preload="metadata";b.prepend(t);}
+  b.onclick=()=>openV(i,VIDEOS);
+  $("#rail").appendChild(b);
+});
+
+/* Modal */
+const modal=$("#modal"),stage=$("#vid"),sheet=$("#sheet");let cur=0,list=VIDEOS;
+function sheetOpen(o){sheet.classList.toggle("open",o);$("#mb").setAttribute("aria-expanded",o?"true":"false");}
+function openV(i,l){
+  if(l)list=l;
+  cur=(i+list.length)%list.length;const v=list[cur];
+  stage.textContent="";let p=null;
+  if(v.video){p=document.createElement("video");p.src=v.video;p.controls=true;p.playsInline=true;p.autoplay=true;stage.appendChild(p);}
+  else stage.appendChild(el("div","none",v.url?'Video opens on social.<br><a href="'+esc(v.url)+'" target="_blank" rel="noopener" style="color:#fff">Watch it here →</a>':"Video coming soon."));
+  $("#mt").textContent=v.title;
+  const seg=$("#seg");seg.innerHTML=list.map((_,k)=>'<i'+(k<cur?' class="done"':'')+'><b></b></i>').join("");
+  const bar=seg.children[cur].firstChild;
+  if(p)p.ontimeupdate=()=>{bar.style.width=(p.duration?p.currentTime/p.duration*100:0)+"%";};
+  else seg.children[cur].classList.add("done");
+  sheetOpen(false);renderUses();
+  modal.classList.add("open");document.body.style.overflow="hidden";
+}
+function renderUses(){
+  const v=list[cur],has=!!(v.uses&&v.uses.length);
+  $("#mb").style.display=has?"":"none";$("#mct").textContent=has?v.uses.length:"";
+  $("#uses").innerHTML=has?v.uses.map(u=>'<li><div class="n">'+esc(u.name)+(u.note?'<small>'+esc(u.note)+'</small>':'')+'</div><a href="'+esc(buy(u))+'" target="_blank" rel="sponsored noopener">Buy on Shopee</a></li>').join(""):"";
+  if(!has)sheetOpen(false);
+}
+function closeV(){sheetOpen(false);modal.classList.remove("open");document.body.style.overflow="";stage.textContent="";}
+/* Events carousel */
+const track=$("#evTrack");
+EVENTS.forEach((v,i)=>{
+  const b=el("button","vcard",PLAY+'<span class="ttl">'+esc(v.title)+'<small>'+esc(v.tag||"")+'</small></span>');
+  b.type="button"; b.setAttribute("aria-label","Watch: "+v.title+" "+(v.tag||""));
+  if(v.video){const t=document.createElement("video");t.src=v.video+"#t=0.8";t.muted=true;t.playsInline=true;t.preload="metadata";b.prepend(t);}
+  b.onclick=()=>openV(i,EVENTS);
+  track.appendChild(b);
+});
+/* Arrows + dots under a carousel (not on the videos) */
+function classicCarousel(tr,bar){
+  const prev=bar.querySelector('[data-d="-1"]'),next=bar.querySelector('[data-d="1"]'),dots=bar.querySelector(".dots");
+  const step=()=>{const c=tr.querySelector(".vcard");return c?c.offsetWidth+(parseFloat(getComputedStyle(tr).columnGap)||0):1;};
+  const spots=()=>Math.max(1,Math.round((tr.scrollWidth-tr.clientWidth)/step())+1);
+  function build(){
+    const n=spots();dots.textContent="";
+    for(let i=0;i<n&&n>1;i++){const d=document.createElement("button");d.type="button";d.setAttribute("aria-label","Go to "+(i+1));d.onclick=()=>tr.scrollTo({left:i*step(),behavior:"smooth"});dots.appendChild(d);}
+    state();
+  }
+  function state(){
+    prev.disabled=tr.scrollLeft<=2;next.disabled=tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-2;
+    tr.classList.toggle("fade-l",!prev.disabled);tr.classList.toggle("fade-r",!next.disabled);
+    const i=Math.round(tr.scrollLeft/step());
+    [...dots.children].forEach((d,k)=>d.classList.toggle("on",k===i));
+  }
+  prev.onclick=()=>tr.scrollBy({left:-step(),behavior:"smooth"});
+  next.onclick=()=>tr.scrollBy({left:step(),behavior:"smooth"});
+  tr.addEventListener("scroll",state,{passive:true});addEventListener("resize",build);build();
+}
+/* Auto-moving, endless carousel (falls back to the classic one if the visitor prefers reduced motion) */
+function carousel(tr,bar){
+  const orig=[...tr.querySelectorAll(".vcard")],n=orig.length;
+  if(n<2||matchMedia("(prefers-reduced-motion: reduce)").matches){classicCarousel(tr,bar);return;}
+  const prev=bar.querySelector('[data-d="-1"]'),next=bar.querySelector('[data-d="1"]'),dots=bar.querySelector(".dots");
+  const SPEED=45; /* pixels per second - change to go faster/slower */
+  const step=()=>orig[0].offsetWidth+(parseFloat(getComputedStyle(tr).columnGap)||0);
+  let h=0,pos=0,last=0,hold=false,timer=0,vis=true,tick0=0;
+  tr.classList.add("marquee");prev.disabled=next.disabled=false;
+  function layout(){
+    const phase=h?(((tr.scrollLeft-h)%h)+h)%h/h:0;
+    tr.querySelectorAll(".clone").forEach(c=>c.remove());
+    h=step()*n;
+    const k=Math.ceil(tr.clientWidth/h)+3;
+    for(let s=1;s<k;s++)orig.forEach(o=>{const c=o.cloneNode(true);c.classList.add("clone");c.setAttribute("aria-hidden","true");c.tabIndex=-1;c.onclick=o.onclick;tr.appendChild(c);});
+    tr.scrollLeft=pos=h+phase*h;
+    dots.textContent="";
+    for(let i=0;i<n;i++){const d=document.createElement("button");d.type="button";d.setAttribute("aria-label","Go to "+(i+1));d.onclick=()=>{pause(2500);tr.scrollTo({left:h+i*step(),behavior:"smooth"});};dots.appendChild(d);}
+    dotState();
+  }
+  function dotState(){
+    const i=Math.round((((tr.scrollLeft-h)%h)+h)%h/step())%n;
+    [...dots.children].forEach((d,k)=>d.classList.toggle("on",k===i));
+  }
+  function pause(ms){hold=true;clearTimeout(timer);timer=setTimeout(()=>{hold=false;pos=tr.scrollLeft;},ms);}
+  function normalise(){const sl=tr.scrollLeft;if(sl>=2*h)tr.scrollLeft=pos=sl-h;else if(sl<h)tr.scrollLeft=pos=sl+h;}
+  function tick(t){
+    const dt=Math.min(.05,(t-last)/1000||0);last=t;
+    if(!hold&&vis){pos+=SPEED*dt;if(pos>=2*h)pos-=h;tr.scrollLeft=pos;}
+    requestAnimationFrame(tick);
+  }
+  ["pointerdown","touchstart","touchend","wheel","keydown","focusin"].forEach(e=>tr.addEventListener(e,()=>pause(2500),{passive:true}));
+  tr.addEventListener("scroll",()=>{dotState();if(hold){pause(1200);clearTimeout(tick0);tick0=setTimeout(normalise,150);}},{passive:true});
+  prev.onclick=()=>{pause(2500);tr.scrollBy({left:-step(),behavior:"smooth"});};
+  next.onclick=()=>{pause(2500);tr.scrollBy({left:step(),behavior:"smooth"});};
+  if("IntersectionObserver" in window)new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis)pos=tr.scrollLeft;}).observe(tr);
+  addEventListener("resize",layout);
+  layout();requestAnimationFrame(tick);
+}
+carousel($("#rail"),$("#railBar"));
+carousel(track,$("#evBar"));
+$("#mx").onclick=closeV;$("#mb").onclick=()=>sheetOpen(!sheet.classList.contains("open"));$("#sx").onclick=()=>sheetOpen(false);$("#mp").onclick=()=>openV(cur-1);$("#mn").onclick=()=>openV(cur+1);
+modal.addEventListener("click",e=>{if(e.target===modal||e.target.classList.contains("mbox"))closeV();});
+addEventListener("keydown",e=>{if(!modal.classList.contains("open"))return;if(e.key==="Escape"){if(sheet.classList.contains("open"))sheetOpen(false);else closeV();}if(e.key==="ArrowRight")openV(cur+1);if(e.key==="ArrowLeft")openV(cur-1);});
+
+/* Find your machine */
+const mWrap=$("#machines");
+MACHINES.forEach(m=>{
+  const c=el("div","mc",'<span class="badge">'+esc(m.badge)+'</span><h3>'+esc(m.name)+'</h3><div class="pr"></div><p>'+esc(m.text)+'</p><a class="btn" href="#" target="_blank" rel="sponsored noopener">Buy on Shopee</a>');
+  c.dataset.id=m.id;mWrap.appendChild(c);
+});
+function refreshCountry(){
+  document.querySelectorAll(".cc button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.c===CC));
+  MACHINES.forEach(m=>{
+    const c=mWrap.querySelector('[data-id="'+m.id+'"]');
+    c.querySelector(".pr").textContent=(m.prices||{})[CC]||"";
+    c.querySelector(".btn").href=buy(m);
+  });
+  if(modal.classList.contains("open"))renderUses();
+}
+document.querySelectorAll(".cc button").forEach(b=>b.onclick=()=>{
+  CC=b.dataset.c;
+  try{localStorage.setItem("cc",CC);}catch(e){}
+  refreshCountry();
+});
+refreshCountry();
+QUIZ.forEach(q=>{
+  const b=el("button","opt",'<b>'+esc(q.t)+'</b><span>'+esc(q.s)+'</span>');
+  b.type="button";b.setAttribute("aria-pressed","false");
+  b.onclick=()=>{
+    document.querySelectorAll(".opt").forEach(o=>o.setAttribute("aria-pressed",o===b));
+    document.querySelectorAll(".mc").forEach(c=>c.classList.toggle("pick",c.dataset.id===q.id));
+    const p=mWrap.querySelector(".pick");if(p)p.scrollIntoView({behavior:"smooth",block:"nearest"});
+  };
+  $("#quiz").appendChild(b);
+});
+
+/* Learn with me */
+if(DESIGNSPACE){const a=el("a","btn brand","See my projects on Design Space");a.href=DESIGNSPACE;a.target="_blank";a.rel="noopener";$("#sp").prepend(a);}
+WORKSHOPS.forEach(w=>{
+  const li=(arr,wbr)=>arr.map(p=>'<li>'+(wbr?esc(p).replace(/\//g,'/<wbr>'):esc(p))+'</li>').join("");
+  $("#workshops").appendChild(el("div","wk",'<h3>'+esc(w.t)+'</h3>'+(w.d?'<p class="d">'+esc(w.d)+'</p>':"")+'<h4>What you\'ll learn</h4><ul>'+li(w.pts)+'</ul>'+(w.topics?'<h4>'+esc(w.tt||"Projects covered")+'</h4><ul>'+li(w.topics,1)+'</ul>':"")+(w.inc?'<h4>What\'s included</h4><ul class="inc">'+li(w.inc)+'</ul>':"")+'<a class="btn brand" href="'+esc(w.link)+'" target="_blank" rel="noopener">Learn More</a>'));
+});
+</script>
+</body>
+</html>
