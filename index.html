@@ -193,13 +193,6 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .mnb svg{width:24px;height:24px;stroke-width:2.5}
 @media(max-width:700px){.mnb{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;z-index:4;background:rgba(0,0,0,.4)}#mp{left:max(16px,env(safe-area-inset-left))}#mn{right:max(16px,env(safe-area-inset-right))}.mnb svg{width:20px;height:20px}}
 /* find your machine */
-.q{display:grid;gap:var(--gap);margin:var(--gap) 0 0}
-@media(min-width:640px){.q{grid-template-columns:repeat(3,1fr)}}
-.opt{padding:var(--card);border-radius:16px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg);text-align:left;font:500 .95rem/1.3 var(--font);cursor:pointer;transition:border-color .15s,background .15s}
-.opt b{display:block;font-size:1rem;margin-bottom:3px}
-.opt span{color:var(--muted);font-size:.82rem}
-.opt:hover{border-color:var(--brand)}
-.opt[aria-pressed=true]{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 10%,var(--bg))}
 .machines{display:grid;gap:var(--gap)}
 @media(min-width:760px){.machines{grid-template-columns:repeat(3,1fr)}}
 .mtog{display:flex;justify-content:center;gap:4px;width:max-content;max-width:100%;margin:0 auto clamp(20px,4vw,28px);padding:4px;border-radius:99px;background:var(--soft)}
@@ -222,6 +215,15 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 /* learn */
 .learn{display:grid;gap:var(--gap)}
 @media(min-width:700px){.learn{grid-template-columns:1fr 1fr}}
+.guides{display:grid;gap:var(--gap);grid-template-columns:1fr}
+@media(min-width:600px){.guides{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.guides{grid-template-columns:repeat(5,1fr)}}
+.gc{display:flex;flex-direction:column;gap:8px;padding:var(--card);border-radius:20px;background:var(--soft);min-width:0}
+.gc .tg{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--brand)}
+.gc h3{margin:0;font-size:1.05rem;line-height:1.25;letter-spacing:-.01em;overflow-wrap:break-word}
+.gc p{margin:0 0 8px;color:var(--muted);font-size:.88rem;line-height:1.45;flex:1}
+.gc .btn{align-self:flex-start;min-height:42px;font-size:.85rem;padding:0 18px}
+.gc .soon{align-self:flex-start;display:inline-flex;align-items:center;min-height:42px;padding:0 18px;border-radius:99px;background:var(--bg);color:var(--muted);font:600 .85rem var(--font)}
 .wk{padding:var(--card);border-radius:20px;background:var(--soft);display:flex;flex-direction:column;gap:8px}
 .wk h3{margin:0;font-size:1.3rem;letter-spacing:-.02em}
 .wk ul{margin:0 0 8px;padding-left:1.1em;color:var(--muted);font-size:.92rem}
@@ -239,6 +241,14 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .tagline{padding-block:clamp(40px,8vw,88px)}
 .tagline h2.big{margin:0;font-size:clamp(2.4rem,8vw,4.4rem)}
 .tagline h2.big em{font-style:normal;color:var(--brand)}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;gap:var(--gap)}
+@media(min-width:760px){.steps ol{grid-template-columns:repeat(3,1fr)}}
+.steps li{display:flex;flex-direction:column;gap:8px;padding:var(--card);border-radius:20px;background:var(--soft);min-width:0}
+.steps .n{width:40px;height:40px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font:700 1rem var(--font)}
+.steps h3{margin:4px 0 0;font-size:1.3rem;letter-spacing:-.02em}
+.steps p{margin:0 0 8px;color:var(--muted);font-size:.92rem;line-height:1.45;flex:1}
+.steps .btn{align-self:flex-start;min-height:44px;font-size:.88rem}
+section.steps{padding-top:0}
 .about-grid{display:grid;gap:clamp(20px,4vw,32px);align-items:center}
 .about-img{display:block;width:100%;max-width:min(100%,560px);height:auto;margin:0 auto}
 @media(min-width:800px){.about-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(20px,3vw,40px)}.about-img{max-width:none}}
@@ -403,13 +413,12 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 </section>
 
 <section class="wrap" id="machine">
-  <h2 class="big">Find Your Machine<small>Not sure which one? Tell me what you want to make.</small></h2>
+  <h2 class="big">Find Your Machine<small>Not sure which one? Here are the machines I recommend.</small></h2>
   <div class="mtog" role="group" aria-label="Choose where to buy">
     <button type="button" data-c="SG" aria-pressed="false"><svg class="fl" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="10" fill="#EF3340"/><rect y="10" width="28" height="10" fill="#fff"/><circle cx="5.6" cy="5" r="3.6" fill="#fff"/><circle cx="7.1" cy="5" r="3.6" fill="#EF3340"/><g fill="#fff"><polygon points="10.60,0.95 10.85,1.66 11.60,1.68 11.00,2.13 11.22,2.85 10.60,2.42 9.98,2.85 10.20,2.13 9.60,1.68 10.35,1.66"/><polygon points="13.45,3.02 13.70,3.73 14.45,3.75 13.85,4.20 14.07,4.92 13.45,4.49 12.84,4.92 13.05,4.20 12.45,3.75 13.21,3.73"/><polygon points="12.36,6.38 12.61,7.09 13.36,7.10 12.76,7.56 12.98,8.28 12.36,7.85 11.75,8.28 11.96,7.56 11.36,7.10 12.12,7.09"/><polygon points="8.84,6.38 9.08,7.09 9.84,7.10 9.24,7.56 9.45,8.28 8.84,7.85 8.22,8.28 8.44,7.56 7.84,7.10 8.59,7.09"/><polygon points="7.75,3.02 7.99,3.73 8.75,3.75 8.15,4.20 8.36,4.92 7.75,4.49 7.13,4.92 7.35,4.20 6.75,3.75 7.50,3.73"/></g></svg>Buy in Singapore</button>
     <button type="button" data-c="MY" aria-pressed="true"><svg class="fl" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#fff"/><rect y="0.000" width="28" height="1.449" fill="#CC0001"/><rect y="2.857" width="28" height="1.449" fill="#CC0001"/><rect y="5.714" width="28" height="1.449" fill="#CC0001"/><rect y="8.571" width="28" height="1.449" fill="#CC0001"/><rect y="11.429" width="28" height="1.449" fill="#CC0001"/><rect y="14.286" width="28" height="1.449" fill="#CC0001"/><rect y="17.143" width="28" height="1.449" fill="#CC0001"/><rect width="14" height="10" fill="#010066"/><circle cx="5.4" cy="5" r="3.1" fill="#FC0"/><circle cx="6.3" cy="5" r="2.55" fill="#010066"/><g fill="#FC0"><polygon points="9.70,2.50 10.13,4.10 11.65,3.44 10.67,4.78 12.14,5.56 10.48,5.62 10.78,7.25 9.70,6.00 8.62,7.25 8.92,5.62 7.26,5.56 8.73,4.78 7.75,3.44 9.27,4.10"/></g></svg>Buy in Malaysia</button>
   </div>
   <div class="machines" id="machines"></div>
-  <div class="q" id="quiz" role="group" aria-label="What do you want to make?"></div>
 </section>
 
 <section class="wrap" id="events">
@@ -432,6 +441,11 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
   <div class="learn" id="workshops"></div>
 </section>
 
+<section class="wrap" id="guides">
+  <h2 class="big">Guides &amp; Checklists<small>Simple guides, cheatsheets and checklists to help you understand your Cricut and start making with confidence</small></h2>
+  <div class="guides" id="guideList"></div>
+</section>
+
 <section class="wrap about">
   <h2 class="big">Hello, I'm Fajar Siddiq.<small>Follow me on @fajarsiddiq <a href="https://fajarsiddiq.com/tiktok" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</a>, <a href="https://fajarsiddiq.com/instagram" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3"/></svg>Instagram</a>, <a href="https://fajarsiddiq.com/youtube" target="_blank" rel="noopener"><svg class="si" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M6.5 4.5h11A4.5 4.5 0 0122 9v6a4.5 4.5 0 01-4.5 4.5h-11A4.5 4.5 0 012 15V9a4.5 4.5 0 014.5-4.5zM10 8.6v6.8l5.8-3.4L10 8.6z"/></svg>YouTube</a></small></h2>
   <div class="about-grid">
@@ -445,6 +459,14 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 
 <section class="wrap tagline" aria-label="Think It, Make It. Cricut">
   <h2 class="big">Think It, Make It. <em>Cricut</em></h2>
+</section>
+
+<section class="wrap steps" id="start" aria-label="How to get started">
+  <ol>
+    <li><span class="n" aria-hidden="true">1</span><h3>Buy Your Machine</h3><p>Pick the Cricut that fits what you want to make, then order it for Malaysia or Singapore.</p><a class="btn" href="#machine">Find your machine</a></li>
+    <li><span class="n" aria-hidden="true">2</span><h3>Download the App</h3><p>Install Cricut Design Space on your phone or computer, then sign in and set up your machine.</p><a class="btn" href="https://design.cricut.com/" target="_blank" rel="noopener">Get Design Space</a></li>
+    <li><span class="n" aria-hidden="true">3</span><h3>Start Your First Project</h3><p>Join my beginner-friendly workshop to make your first project, or my business workshop to start selling what you make.</p><a class="btn brand" href="#learn">Learn with me</a></li>
+  </ol>
 </section>
 
 <footer>
@@ -560,16 +582,25 @@ const EVENTS = [
   { title:"Maker Meet-Up", tag:"Community", video:"", url:"" }
 ];
 
-// Machines: "for" = the quiz answer (fun / sell / big) this machine matches.
+// Machines shown in "Find Your Machine".
 const MACHINES = [
   { id:"sell", name:"Cricut Explore 5", badge:"Best for starting a business", prices:{MY:"RM ___",SG:"SGD ___"}, links:{MY:"",SG:""}, text:"Cuts a wide range of materials. A solid choice to start selling." },
   { id:"big",  name:"Cricut Maker 5",   badge:"Most powerful", prices:{MY:"RM ___",SG:"SGD ___"}, links:{MY:"",SG:""}, text:"Handles thicker materials and fabric. Pick this for bigger projects." },
   { id:"fun",  name:"Cricut Joy 2",     badge:"Easiest start", prices:{MY:"RM ___",SG:"SGD ___"}, links:{MY:"",SG:""}, text:"Small, simple and quick. Great for cards, labels and stickers." }
 ];
-const QUIZ = [
-  { id:"fun",  t:"Fun and gifts",    s:"Stickers, cards, labels" },
-  { id:"sell", t:"Sell what I make", s:"Start a small business" },
-  { id:"big",  t:"Big or thick jobs", s:"Fabric, wood, more" }
+
+// Guides & Checklists: paste each link between the quotes (starts with https://). Cards with no link show "Coming soon".
+const GUIDES = [
+  { tag:"Guide",      t:"Top Terms for Beginners Guide",             d:"The Cricut words you'll see most, explained in plain language.", link:"" },
+  { tag:"Guide",      t:"Design Space Shortcuts",                    d:"Shortcuts that help you move faster inside Design Space.", link:"" },
+  { tag:"Guide",      t:"Layers Panel Overview For Beginners",       d:"Understand how the Layers panel works so your designs behave the way you expect.", link:"" },
+  { tag:"Guide",      t:"Beginner-Friendly Tips for Cricut Materials", d:"Simple tips for working with the materials you'll use most.", link:"" },
+  { tag:"Checklist",  t:"Cricut Project Checklist For Beginners",    d:"A step-by-step checklist to run through before and during each project.", link:"" },
+  { tag:"Cheatsheet", t:"Cricut Materials Cheatsheet",               d:"A quick reference to keep next to your machine.", link:"" },
+  { tag:"How-to",     t:"How to: Use Transfer Tape",                 d:"Learn how to use transfer tape to move your design onto your project.", link:"" },
+  { tag:"Guide",      t:"Introduction: Cricut Machine Tools",        d:"Get to know the tools that go with your machine and what each one is for.", link:"" },
+  { tag:"Cheatsheet", t:"Cricut Machine Mat Cheatsheet",             d:"A quick reference for choosing the right mat for your material.", link:"" },
+  { tag:"Cheatsheet", t:"Cricut Pens & Markers Cheatsheet",          d:"A quick reference for the pens and markers you can use with your machine.", link:"" }
 ];
 
 // Workshops (links go to jomstart.com)
@@ -730,15 +761,11 @@ document.querySelectorAll(".cc button,.mtog button").forEach(b=>b.onclick=()=>{
   if(b.closest(".cc"))$("#machine").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 });
 refreshCountry();
-QUIZ.forEach(q=>{
-  const b=el("button","opt",'<b>'+esc(q.t)+'</b><span>'+esc(q.s)+'</span>');
-  b.type="button";b.setAttribute("aria-pressed","false");
-  b.onclick=()=>{
-    document.querySelectorAll(".opt").forEach(o=>o.setAttribute("aria-pressed",o===b));
-    document.querySelectorAll(".mc").forEach(c=>c.classList.toggle("pick",c.dataset.id===q.id));
-    const p=mWrap.querySelector(".pick");if(p)p.scrollIntoView({behavior:"smooth",block:"nearest"});
-  };
-  $("#quiz").appendChild(b);
+
+/* Guides & Checklists */
+GUIDES.forEach(g=>{
+  const act=g.link?'<a class="btn" href="'+esc(g.link)+'" target="_blank" rel="noopener">View</a>':'<span class="soon">Coming soon</span>';
+  $("#guideList").appendChild(el("div","gc",'<span class="tg">'+esc(g.tag)+'</span><h3>'+esc(g.t)+'</h3><p>'+esc(g.d)+'</p>'+act));
 });
 
 /* Learn with me */
