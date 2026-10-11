@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&text=Get%20Yours!&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:"Euclid";font-weight:600;font-style:normal;font-display:swap;src:local("Euclid Circular A Semibold"),local("EuclidCircularA-Semibold"),local("Euclid Flex Semibold"),local("EuclidFlex-Semibold"),local("Euclid Semibold"),local("Euclid-Semibold")}
 @font-face{font-family:"Euclid";font-weight:700;font-style:normal;font-display:swap;src:local("Euclid Circular A Bold"),local("EuclidCircularA-Bold"),local("Euclid Flex Bold"),local("EuclidFlex-Bold"),local("Euclid Bold"),local("Euclid-Bold")}
@@ -156,10 +157,11 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 @media(min-width:760px){.seen ul{flex-wrap:nowrap;gap:12px 28px}.seen{--k:.75}}
 @media(min-width:1000px){.seen ul{gap:12px 40px}.seen{--k:1}}
 /* modal - story-style player */
-.modal{position:fixed;inset:0;z-index:999;display:none;background:rgba(10,10,14,.96);overscroll-behavior:contain}
+.modal{position:fixed;inset:0;z-index:999;display:none;background:#1a1a1a;overscroll-behavior:contain}
 .modal.open{display:block}
-.mbox{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,40px);padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));color:#fff}
-.stage{position:relative;flex:none;width:min(calc(100vw - 24px),calc(94vh*9/16),520px);width:min(calc(100vw - 24px),calc(94dvh*9/16),520px);aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.mbox{--sw:min(calc(100vw - 24px),calc(94vh*9/16),520px);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom));color:#fff}
+@supports(height:100dvh){.mbox{--sw:min(calc(100vw - 24px),calc(94dvh*9/16),520px)}}
+.stage{position:relative;flex:none;width:var(--sw);aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .vid{position:absolute;inset:0}
 .vid video{width:100%;height:100%;object-fit:contain;background:#000}
 .vid .none{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:#bbb;font-size:.9rem}
@@ -181,7 +183,7 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .mic svg{width:22px;height:22px}
 .mic.buy{background:var(--brand)}
 .mic .ct{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#fff;color:#0b0b0f;font:700 .68rem/18px var(--font);text-align:center}
-.mcap{position:absolute;left:14px;right:14px;bottom:64px;z-index:2;font-weight:700;font-size:1rem;line-height:1.25;text-shadow:0 1px 8px rgba(0,0,0,.85);pointer-events:none}
+.mcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:56px 14px 18px;background:linear-gradient(transparent,rgba(0,0,0,.65));font-weight:700;font-size:1rem;line-height:1.25;text-shadow:0 1px 8px rgba(0,0,0,.85);pointer-events:none}
 .mcap small{display:block;margin-top:2px;font-weight:500;font-size:.82rem;opacity:.92}
 .msheet{position:absolute;left:0;right:0;bottom:0;z-index:5;max-height:72%;overflow:auto;background:#1b1b22;border-radius:20px 20px 0 0;padding:0 14px max(16px,env(safe-area-inset-bottom));transform:translateY(105%);visibility:hidden;transition:transform .25s,visibility .25s}
 .msheet.open{transform:none;visibility:visible}
@@ -199,6 +201,39 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .mnb{flex:none;width:52px;height:52px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .15s;-webkit-tap-highlight-color:transparent}
 .mnb:hover{background:rgba(255,255,255,.26)}
 .mnb svg{width:24px;height:24px;stroke-width:2.5}
+/* story-style viewer: side previews, close X, mute, tap to pause */
+.mclose{position:fixed;z-index:1000;top:max(14px,env(safe-area-inset-top));right:max(18px,env(safe-area-inset-right));width:46px;height:46px;border:0;background:none;color:#fff;display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mclose svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.mclose:hover{opacity:.8}
+.mxh{display:none}
+.mic#mm{background:transparent}
+.mic .i-off{display:none}
+.mic.muted .i-on{display:none}
+.mic.muted .i-off{display:block}
+.mnb:disabled{opacity:.3;cursor:default;pointer-events:none}
+.mside{flex:1 1 0;min-width:0;display:flex;align-items:center;gap:18px}
+.mleft{justify-content:flex-end}
+.mright{justify-content:flex-start}
+.scard{flex:none;position:relative;display:block;border:0;padding:0;cursor:pointer;overflow:hidden;color:#fff;border-radius:14px;aspect-ratio:9/16;width:min(calc(var(--sw)*.4),calc((100vw - var(--sw) - 300px)/4));background:linear-gradient(145deg,#00C08B,#1a8163);-webkit-tap-highlight-color:transparent}
+.scard video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.vcard .th,.scard .th{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.scard::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);transition:background .15s}
+.scard:hover::after{background:rgba(0,0,0,.28)}
+.scard:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.scard .sav{position:absolute;z-index:2;left:50%;top:50%;width:34%;aspect-ratio:1;transform:translate(-50%,-62%);border-radius:50%;padding:3px;background:linear-gradient(45deg,#00C08B,#7be3c4 55%,#fff)}
+.scard .sav img{display:block;width:100%;height:100%;border-radius:50%;border:2px solid #1a1a1a;background:#fff;object-fit:cover}
+.scard .snm{position:absolute;z-index:2;left:6px;right:6px;top:calc(50% + 18%);text-align:center;font-weight:700;font-size:clamp(.62rem,.95vw,.88rem);line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.scard .snm small{display:block;margin-top:3px;font-weight:500;font-size:.85em;opacity:.92}
+.vid{cursor:pointer}
+.vid.paused::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(0,0,0,.5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M8 5.2v13.6a1 1 0 001.5.86l11-6.8a1 1 0 000-1.72l-11-6.8A1 1 0 008 5.2z'/%3E%3C/svg%3E") 54% 50%/30px no-repeat;pointer-events:none}
+/* "Get Yours!" doodle + white arrow pointing at the bag (shows on every video that has a bag; hides once the list is open) */
+.buyhint{position:absolute;top:calc(100% + 6px);right:-34px;width:130px;height:104px;pointer-events:none;animation:bhPoke 1.5s ease-in-out infinite}
+.mic .buyhint svg{position:absolute;left:0;top:0;width:130px;height:70px;overflow:visible;fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75)) drop-shadow(0 0 1px rgba(0,0,0,.6))}
+.buyhint .bt{position:absolute;left:-14px;top:58px;pointer-events:auto;white-space:nowrap;color:#fff;font:400 1.45rem/1 "Permanent Marker","Comic Sans MS","Chalkboard SE","Marker Felt",cursive;letter-spacing:.5px;transform:rotate(-6deg);transform-origin:left center;text-shadow:2px 0 0 #111,-2px 0 0 #111,0 2px 0 #111,0 -2px 0 #111,2px 2px 0 #111,-2px -2px 0 #111,2px -2px 0 #111,-2px 2px 0 #111,0 3px 6px rgba(0,0,0,.5)}
+.mic[aria-expanded="true"] .buyhint{display:none}
+@keyframes bhPoke{0%,100%{transform:translate(0,0)}50%{transform:translate(3px,-5px)}}
+@media(max-width:1099px){.scard.far{display:none}.scard{width:min(calc(var(--sw)*.4),calc((100vw - var(--sw) - 220px)/2))}}
+@media(max-width:900px){.mside,.mclose{display:none}.mxh{display:grid}.mbox{gap:8px}}
 @media(max-width:700px){.mnb{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;z-index:4;background:rgba(0,0,0,.4)}#mp{left:max(16px,env(safe-area-inset-left))}#mn{right:max(16px,env(safe-area-inset-right))}.mnb svg{width:20px;height:20px}}
 /* find your machine */
 .machines{display:grid;gap:var(--gap)}
@@ -415,6 +450,8 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 .fsm .lnk{position:absolute;display:block;box-sizing:border-box;text-indent:-9999px;overflow:hidden;border-bottom:2px solid transparent;transition:border-color .15s;cursor:pointer}
 .fsm .lnk:hover,.fsm .lnk:focus-visible{border-bottom-color:#00C08B;outline:0}
 .fsm .lnk:focus-visible{box-shadow:0 0 0 2px #00C08B;border-radius:4px}
+/* sparkle splurge when the profile card opens */
+.fxs{position:fixed;left:0;top:0;z-index:1000;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5l2.6 7.9 7.9 2.6-7.9 2.6L12 22.5l-2.6-7.9L1.5 12l7.9-2.6z' fill='%23fff' stroke='%2300C08B' stroke-opacity='.6' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 3px rgba(0,0,0,.45));opacity:0;will-change:transform,opacity}
 @media(prefers-reduced-motion:reduce){.fsw::before,.fsw::after{animation:none;opacity:1}.fsw,.fsm,.fsm.open,.fsm .fbtn,.fsm .lnk{transition:none}}
 </style>
 </head>
@@ -424,7 +461,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
   <div class="wrap">
     <b class="brand-lockup"><a class="brand-link" href="#about" aria-label="Fajar Siddiq (verified) - About"><span class="bn">Fajar Siddiq</span><svg class="bvf" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M14.98 0.89 L16.70 3.86 L20.13 3.87 L20.14 7.30 L23.11 9.02 L21.40 12.00 L23.11 14.98 L20.14 16.70 L20.13 20.13 L16.70 20.14 L14.98 23.11 L12.00 21.40 L9.02 23.11 L7.30 20.14 L3.87 20.13 L3.86 16.70 L0.89 14.98 L2.60 12.00 L0.89 9.02 L3.86 7.30 L3.87 3.87 L7.30 3.86 L9.02 0.89 L12.00 2.60Z" fill="#4193EF"/><path d="M7.25 11.75L10.85 15.35L16.75 8.65" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></svg></a></b>
     <ul id="navmenu">
-      <li><a href="#watch">Watch</a></li>
+      <li><a href="#watch">Projects</a></li>
       <li><a href="#machines">Machines</a></li>
       <li><a href="#support">Support</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -556,7 +593,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 </section>
 
 <section class="wrap" id="watch">
-  <h2 class="big">Watch Now<small>Tap a video, then buy the exact tools and materials I used</small></h2>
+  <h2 class="big">Shared Projects<small>Tap a video, then buy the exact latest Cricut Machines.</small></h2>
   <div class="track" id="rail"></div>
   <div class="cbar" id="railBar">
     <button type="button" class="cb" data-d="-1" aria-label="Previous" disabled><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
@@ -738,6 +775,8 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player">
   <div class="mbox">
+    <button class="mclose" id="mx" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <div class="mside mleft" id="sideL"></div>
     <button class="mnb" id="mp" aria-label="Previous video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
     <div class="stage" id="stage">
       <div class="vid" id="vid"></div>
@@ -746,8 +785,9 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
         <div class="mid">
           <span class="mav" aria-hidden="true"><img src="data:image/webp;base64,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" alt="" width="40" height="40"></span>
           <div class="mwho"><b>Fajar Siddiq<svg class="mvf" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M14.98 0.89 L16.70 3.86 L20.13 3.87 L20.14 7.30 L23.11 9.02 L21.40 12.00 L23.11 14.98 L20.14 16.70 L20.13 20.13 L16.70 20.14 L14.98 23.11 L12.00 21.40 L9.02 23.11 L7.30 20.14 L3.87 20.13 L3.86 16.70 L0.89 14.98 L2.60 12.00 L0.89 9.02 L3.86 7.30 L3.87 3.87 L7.30 3.86 L9.02 0.89 L12.00 2.60Z" fill="#4193EF"/><path d="M7.25 11.75L10.85 15.35L16.75 8.65" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></svg></b><a href="https://cricut.fajarsiddiq.com" target="_blank" rel="noopener">cricut.fajarsiddiq.com</a></div>
-          <button class="mic buy" id="mb" type="button" aria-label="Buy Cricut Products from this video" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><span class="ct" id="mct"></span></button>
-          <button class="mic" id="mx" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+          <button class="mic buy" id="mb" type="button" aria-label="Buy Cricut Products from this video" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><span class="ct" id="mct"></span><span class="buyhint" aria-hidden="true"><svg viewBox="0 0 130 70" focusable="false"><path d="M37 49C38 31 57 25 74 8"/><path d="M74 8l-13.5 3.8M74 8l-3.8 13.5"/></svg><span class="bt">Get Yours!</span></span></button>
+          <button class="mic" id="mm" type="button" aria-label="Mute" aria-pressed="false"><svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.8L13 18.5v-13L7.8 9.5H4z"/><path d="M16.2 9.2a4 4 0 010 5.6M18.6 6.8a7.4 7.4 0 010 10.4"/></svg><svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.8L13 18.5v-13L7.8 9.5H4z"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg></button>
+          <button class="mic mxh" id="mx2" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
         </div>
       </div>
       <div class="mcap" id="mt"></div>
@@ -759,6 +799,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
       </div>
     </div>
     <button class="mnb" id="mn" aria-label="Next video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="mside mright" id="sideR"></div>
   </div>
 </div>
 
@@ -814,45 +855,47 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 // Shopee search page per country (used until you paste real links)
 const SEARCH = { MY:"https://shopee.com.my/search?keyword=", SG:"https://shopee.sg/search?keyword=" };
 
-// Videos: "video" = link to your .mp4, "url" = Instagram/TikTok link (used if no video yet),
-// "uses" = everything you used in that video.
-const VIDEOS = [
-  { title:"Custom sticker sheet", tag:"Beginner", video:"", url:"", uses:[
-    { name:"Cricut machine", note:"The one I used", links:{MY:"",SG:""} },
-    { name:"Printable sticker paper", note:"Pack of 20", links:{MY:"",SG:""} },
-    { name:"Standard grip mat", note:"12 x 12 in", links:{MY:"",SG:""} } ] },
-  { title:"Iron-on tote bag", tag:"Beginner", video:"", url:"", uses:[
-    { name:"Iron-on vinyl", note:"Black", links:{MY:"",SG:""} },
-    { name:"Weeding tools set", note:"", links:{MY:"",SG:""} },
-    { name:"Canvas tote bag", note:"", links:{MY:"",SG:""} } ] },
-  { title:"Name labels to sell", tag:"Business", video:"", url:"", uses:[
-    { name:"Permanent vinyl", note:"Assorted colours", links:{MY:"",SG:""} },
-    { name:"Transfer tape", note:"", links:{MY:"",SG:""} } ] }
+// The shopping bag shown in EVERY video pop-up (Shared Projects and Events & Meet-Ups): the 3 machines.
+// Edit it here once and all videos update. (To give one video different products, put its own uses:[ ... ] instead of uses:BAG.)
+const BAG = [
+  { name:"Cricut Joy 2",     note:"Easiest start",                 links:{MY:"https://cricut.fajarsiddiq.com/joy2",SG:"https://cricut.fajarsiddiq.com/joy2"} },
+  { name:"Cricut Explore 5", note:"Best for starting a business",  links:{MY:"https://cricut.fajarsiddiq.com/explore5",SG:"https://cricut.fajarsiddiq.com/explore5"} },
+  { name:"Cricut Maker 5",   note:"Most powerful",                 links:{MY:"https://cricut.fajarsiddiq.com/maker5",SG:"https://cricut.fajarsiddiq.com/maker5"} }
 ];
+
+// Videos: "video" = link to your .mp4, "url" = Instagram/TikTok link (used if no video yet),
+// "uses" = the products shown in the shopping bag for that video.
+const VIDEOS = [
+  { title:"Custom sticker sheet", tag:"Beginner", video:"", url:"", uses:BAG },
+  { title:"Iron-on tote bag", tag:"Beginner", video:"", url:"", uses:BAG },
+  { title:"Name labels to sell", tag:"Business", video:"", url:"", uses:BAG }
+];
+
+
 /* Events & Meet-Ups videos (vertical), hosted on Cloudflare R2. Change title / tag to edit the text on each card.
-   uses = the products in the shopping bag: name = Product Name, note = Product Description, links = your Shopee links (MY / SG).
-   Copy a { name:..., note:..., links:... } line to add more products. */
+   thumb:"https://..." = your own thumbnail image for the card; thumbAt:5 = use the video frame at 5 seconds instead.
+   uses:BAG = the 3 machines in the shopping bag (edit them once in BAG above). */
 const R2 = "https://pub-80cf938ac23747d88878235161f9dcd3.r2.dev/cricut/";
 const EVENTS = [
-  { title:"Ainna Workshop", tag:"Johor, Malaysia", video:R2+"Ainna%20Workshop%20%40JB.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Ainna Workshop", tag:"Negeri Sembilan, Malaysia", video:R2+"Ainna%20Workshop%20%40N9.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Cricut Open House 2025", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Open%20House%202025.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Cricut Party", tag:"Selangor, Malaysia", video:R2+"Cricut%20Party.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Cricut Plaza 2026", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Plaza%202026.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Cricut Socials", tag:"TikTok Office HQ, Malaysia", video:R2+"Cricut%20Socials%20MY.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Cricut Socials", tag:"Geylang, Singapore", video:R2+"Cricut%20Socials%20SG.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Lisa Workshop", tag:"Kuala Lumpur, Malaysia", video:R2+"Lisa%20Workshop%20%40KL.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Maker 5 Launch Event Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Maker%205%20Spotlight.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Meet & Kraf", tag:"Kedah, Malaysia", video:R2+"Meet%26Kraf.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Maker 4, Mothers Day Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Mothers%20Day%20Spotlight.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] },
-  { title:"Northpoint City Mall", tag:"Yishun, Singapore", video:R2+"Northpoint.mp4", url:"", uses:[ { name:"Product Name", note:"Product Description", links:{MY:"",SG:""} } ] }
+  { title:"Ainna Workshop", tag:"Johor, Malaysia", video:R2+"Ainna%20Workshop%20%40JB.mp4", thumbAt:5, url:"", uses:BAG },
+  { title:"Cricut Open House 2025", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Open%20House%202025.mp4", url:"", uses:BAG },
+  { title:"Cricut Party", tag:"Selangor, Malaysia", video:R2+"Cricut%20Party.mp4", url:"", uses:BAG },
+  { title:"Ainna Workshop", tag:"Negeri Sembilan, Malaysia", video:R2+"Ainna%20Workshop%20%40N9.mp4", url:"", uses:BAG },
+  { title:"Cricut Plaza 2026", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Plaza%202026.mp4", url:"", uses:BAG },
+  { title:"Cricut Socials", tag:"TikTok Office HQ, Malaysia", video:R2+"Cricut%20Socials%20MY.mp4", url:"", uses:BAG },
+  { title:"Cricut Socials", tag:"Geylang, Singapore", video:R2+"Cricut%20Socials%20SG.mp4", url:"", uses:BAG },
+  { title:"Lisa Workshop", tag:"Kuala Lumpur, Malaysia", video:R2+"Lisa%20Workshop%20%40KL.mp4", url:"", uses:BAG },
+  { title:"Maker 5 Launch Event Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Maker%205%20Spotlight.mp4", thumbAt:5, url:"", uses:BAG },
+  { title:"Meet & Kraf", tag:"Kedah, Malaysia", video:R2+"Meet%26Kraf.mp4", url:"", uses:BAG },
+  { title:"Maker 4, Mothers Day Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Mothers%20Day%20Spotlight.mp4", url:"", uses:BAG },
+  { title:"Northpoint City Mall", tag:"Yishun, Singapore", video:R2+"Northpoint.mp4", url:"", uses:BAG }
 ];
 
 // Machines shown in "Find Your Machine".
 const MACHINES = [
-  { id:"sell", rating:"5.0", name:"Cricut Explore 5", badge:"Best for starting a business", links:{MY:"",SG:""}, text:"Cuts a wide range of materials. A solid choice to start selling." },
-  { id:"big",  rating:"5.0", name:"Cricut Maker 5",   badge:"Most powerful", links:{MY:"",SG:""}, text:"Handles thicker materials and fabric. Pick this for bigger projects." },
-  { id:"fun",  rating:"5.0", name:"Cricut Joy 2",     badge:"Easiest start", links:{MY:"",SG:""}, text:"Small, simple and quick. Great for cards, labels and stickers." }
+  { id:"sell", rating:"5.0", name:"Cricut Explore 5", badge:"Best for starting a business", links:{MY:"https://cricut.fajarsiddiq.com/explore5",SG:"https://cricut.fajarsiddiq.com/explore5"}, text:"Cuts a wide range of materials. A solid choice to start selling." },
+  { id:"big",  rating:"5.0", name:"Cricut Maker 5",   badge:"Most powerful", links:{MY:"https://cricut.fajarsiddiq.com/maker5",SG:"https://cricut.fajarsiddiq.com/maker5"}, text:"Handles thicker materials and fabric. Pick this for bigger projects." },
+  { id:"fun",  rating:"5.0", name:"Cricut Joy 2",     badge:"Easiest start", links:{MY:"https://cricut.fajarsiddiq.com/joy2",SG:"https://cricut.fajarsiddiq.com/joy2"}, text:"Small, simple and quick. Great for cards, labels and stickers." }
 ];
 
 // Guides & Checklists: paste each link between the quotes (starts with https://). Cards with no link show "Coming soon".
@@ -872,6 +915,11 @@ const GUIDES = [
 
 /* ============ Nothing below needs editing ============ */
 const $=s=>document.querySelector(s), el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+/* Card thumbnail: use v.thumb (image link) if given, otherwise a still frame of the video taken at v.thumbAt seconds (default 0.8). */
+function thumbEl(v){
+  if(v.thumb){const m=document.createElement("img");m.className="th";m.src=v.thumb;m.alt="";m.loading="lazy";return m;}
+  const t=document.createElement("video");t.src=v.video+"#t="+(v.thumbAt||0.8);t.muted=true;t.playsInline=true;t.preload="metadata";return t;
+}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 /* Country (MY / SG): remembered on this device, guessed from the time zone the first time */
 let CC="MY"; /* landing page always starts on Malaysia */
@@ -883,27 +931,51 @@ const PLAY='<span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d
 VIDEOS.forEach((v,i)=>{
   const b=el("button","vcard",PLAY+'<span class="ttl">'+esc(v.title)+'<small>'+esc(v.tag||"")+' · '+v.uses.length+' items</small></span>');
   b.type="button"; b.setAttribute("aria-label","Watch: "+v.title);
-  if(v.video){const t=document.createElement("video");t.src=v.video+"#t=0.8";t.muted=true;t.playsInline=true;t.preload="metadata";b.prepend(t);}
+  if(v.thumb||v.video)b.prepend(thumbEl(v));
   b.onclick=()=>openV(i,VIDEOS);
   $("#rail").appendChild(b);
 });
 
 /* Modal */
-const modal=$("#modal"),stage=$("#vid"),sheet=$("#sheet");let cur=0,list=VIDEOS;
+const modal=$("#modal"),stage=$("#vid"),sheet=$("#sheet"),sideL=$("#sideL"),sideR=$("#sideR"),AV=$(".mav img").src;let cur=0,list=VIDEOS,muted=false;
 function sheetOpen(o){sheet.classList.toggle("open",o);$("#mb").setAttribute("aria-expanded",o?"true":"false");}
+function setMuted(m){muted=m;const b=$("#mm");b.classList.toggle("muted",m);b.setAttribute("aria-pressed",m?"true":"false");b.setAttribute("aria-label",m?"Unmute":"Mute");const p=stage.querySelector("video");if(p)p.muted=m;}
+function sideCard(i){
+  const v=list[i];
+  const b=el("button","scard"+(Math.abs(i-cur)>1?" far":""),'<span class="sav"><img src="'+AV+'" alt=""></span><span class="snm">'+esc(v.title)+(v.tag?'<small>'+esc(v.tag)+'</small>':'')+'</span>');
+  b.type="button";b.setAttribute("aria-label","Watch: "+v.title+(v.tag?" "+v.tag:""));
+  if(v.thumb||v.video)b.prepend(thumbEl(v));
+  b.onclick=()=>openV(i);
+  return b;
+}
+function renderSides(){
+  sideL.textContent="";sideR.textContent="";
+  for(let d=2;d>=1;d--){const i=cur-d;if(i>=0)sideL.appendChild(sideCard(i));}
+  for(let d=1;d<=2;d++){const i=cur+d;if(i<list.length)sideR.appendChild(sideCard(i));}
+  $("#mp").disabled=cur<=0;$("#mn").disabled=cur>=list.length-1;
+}
 function openV(i,l){
   if(l)list=l;
-  cur=(i+list.length)%list.length;const v=list[cur];
-  stage.textContent="";let p=null;
-  if(v.video){p=document.createElement("video");p.src=v.video;p.controls=true;p.playsInline=true;p.autoplay=true;stage.appendChild(p);}
+  if(i<0||i>=list.length)return;
+  cur=i;const v=list[cur];
+  stage.textContent="";stage.classList.remove("paused");let p=null;
+  if(v.video){
+    p=document.createElement("video");p.src=v.video;p.playsInline=true;p.autoplay=true;p.muted=muted;
+    p.onclick=()=>{p.paused?p.play():p.pause();};
+    p.onpause=()=>stage.classList.add("paused");p.onplay=()=>stage.classList.remove("paused");
+    p.onended=()=>{if(cur<list.length-1)openV(cur+1);};
+    stage.appendChild(p);
+    const go=p.play();if(go&&go.catch)go.catch(()=>{setMuted(true);const g2=p.play();if(g2&&g2.catch)g2.catch(()=>{});});
+  }
   else stage.appendChild(el("div","none",v.url?'Video opens on social.<br><a href="'+esc(v.url)+'" target="_blank" rel="noopener" style="color:#fff">Watch it here →</a>':"Video coming soon."));
+  $("#mm").style.display=v.video?"":"none";setMuted(muted);
   const mt=$("#mt");mt.textContent=v.title;
   if(list===EVENTS&&v.tag){const sm=document.createElement("small");sm.textContent=v.tag;mt.appendChild(sm);}
   const seg=$("#seg");seg.innerHTML=list.map((_,k)=>'<i'+(k<cur?' class="done"':'')+'><b></b></i>').join("");
   const bar=seg.children[cur].firstChild;
   if(p)p.ontimeupdate=()=>{bar.style.width=(p.duration?p.currentTime/p.duration*100:0)+"%";};
   else seg.children[cur].classList.add("done");
-  sheetOpen(false);renderUses();
+  sheetOpen(false);renderUses();renderSides();
   modal.classList.add("open");document.body.style.overflow="hidden";
 }
 const SHOPEE_ICON="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwOS41OSAxMjIuODgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwOS41OSAxMjIuODgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGZpbGw9IiNFRTREMkQiIGQ9Ik03NC45OCw5MS45OEM3Ni4xNSw4Mi4zNiw2OS45Niw3Ni4yMiw1My42LDcxYy03LjkyLTIuNy0xMS42Ni02LjI0LTExLjU3LTExLjEyIGMwLjMzLTUuNCw1LjM2LTkuMzQsMTIuMDQtOS40N2M0LjYzLDAuMDksOS43NywxLjIyLDE0Ljc2LDQuNTZjMC41OSwwLjM3LDEuMDEsMC4zMiwxLjM1LTAuMmMwLjQ2LTAuNzQsMS42MS0yLjUzLDItMy4xNyBjMC4yNi0wLjQyLDAuMzEtMC45Ni0wLjM1LTEuNDRjLTAuOTUtMC43LTMuNi0yLjEzLTUuMDMtMi43MmMtMy44OC0xLjYyLTguMjMtMi42NC0xMi44Ni0yLjYzYy05Ljc3LDAuMDQtMTcuNDcsNi4yMi0xOC4xMiwxNC40NyBjLTAuNDIsNS45NSwyLjUzLDEwLjc5LDguODYsMTQuNDdjMS4zNCwwLjc4LDguNiwzLjY3LDExLjQ5LDQuNTdjOS4wOCwyLjgzLDEzLjgsNy45LDEyLjY5LDEzLjgxYy0xLjAxLDUuMzYtNi42NSw4LjgzLTE0LjQzLDguOTMgYy02LjE3LTAuMjQtMTEuNzEtMi43NS0xNi4wMi02LjFjLTAuMTEtMC4wOC0wLjY1LTAuNS0wLjcyLTAuNTZjLTAuNTMtMC40Mi0xLjExLTAuMzktMS40NywwLjE1Yy0wLjI2LDAuNC0xLjkyLDIuOC0yLjM0LDMuNDMgYy0wLjM5LDAuNTUtMC4xOCwwLjg2LDAuMjMsMS4yYzEuOCwxLjUsNC4xOCwzLjE0LDUuODEsMy45N2M0LjQ3LDIuMjgsOS4zMiwzLjUzLDE0LjQ4LDMuNzJjMy4zMiwwLjIyLDcuNS0wLjQ5LDEwLjYzLTEuODEgQzcwLjYzLDEwMi42Nyw3NC4yNSw5Ny45Miw3NC45OCw5MS45OEw3NC45OCw5MS45OHogTTU0Ljc5LDcuMThjLTEwLjU5LDAtMTkuMjIsOS45OC0xOS42MiwyMi40N2gzOS4yNSBDNzQuMDEsMTcuMTYsNjUuMzgsNy4xOCw1NC43OSw3LjE4TDU0Ljc5LDcuMTh6IE05NC45OSwxMjIuODhsLTAuNDEsMGwtODAuODItMC4wMWgwYy01LjUtMC4yMS05LjU0LTQuNjYtMTAuMDktMTAuMTlsLTAuMDUtMSBsLTMuNjEtNzkuNXYwQzAsMzIuMTIsMCwzMi4wNiwwLDMyYzAtMS4yOCwxLjAzLTIuMzMsMi4zLTIuMzVsMCwwaDI1LjQ4QzI4LjQxLDEzLjE1LDQwLjI2LDAsNTQuNzksMHMyNi4zOSwxMy4xNSwyNy4wMSwyOS42NSBoMjUuNGgwLjA0YzEuMywwLDIuMzUsMS4wNSwyLjM1LDIuMzVjMCwwLjA0LDAsMC4wOCwwLDAuMTJ2MGwtMy45Niw3OS44MWwtMC4wNCwwLjY4QzEwNS4xMiwxMTguMjEsMTAwLjU5LDEyMi43Myw5NC45OSwxMjIuODggTDk0Ljk5LDEyMi44OHoiLz48L2c+PC9zdmc+";
@@ -913,13 +985,13 @@ function renderUses(){
   $("#uses").innerHTML=has?v.uses.map(u=>'<li><div class="n">'+esc(u.name)+(u.note?'<small>'+esc(u.note)+'</small>':'')+'</div><a href="'+esc(buy(u))+'" target="_blank" rel="sponsored noopener"><span class="shp" aria-hidden="true"><img src="'+SHOPEE_ICON+'" alt=""></span>Buy on Shopee</a></li>').join(""):"";
   if(!has)sheetOpen(false);
 }
-function closeV(){sheetOpen(false);modal.classList.remove("open");document.body.style.overflow="";stage.textContent="";}
+function closeV(){sheetOpen(false);modal.classList.remove("open");document.body.style.overflow="";stage.textContent="";stage.classList.remove("paused");sideL.textContent="";sideR.textContent="";}
 /* Events carousel */
 const track=$("#evTrack");
 EVENTS.forEach((v,i)=>{
   const b=el("button","vcard",PLAY+'<span class="ttl">'+esc(v.title)+'<small>'+esc(v.tag||"")+'</small></span>');
   b.type="button"; b.setAttribute("aria-label","Watch: "+v.title+" "+(v.tag||""));
-  if(v.video){const t=document.createElement("video");t.src=v.video+"#t=0.8";t.muted=true;t.playsInline=true;t.preload="metadata";b.prepend(t);}
+  if(v.thumb||v.video)b.prepend(thumbEl(v));
   b.onclick=()=>openV(i,EVENTS);
   track.appendChild(b);
 });
@@ -984,8 +1056,8 @@ function carousel(tr,bar){
 }
 carousel($("#rail"),$("#railBar"));
 carousel(track,$("#evBar"));
-$("#mx").onclick=closeV;$("#mb").onclick=()=>sheetOpen(!sheet.classList.contains("open"));$("#sx").onclick=()=>sheetOpen(false);$("#mp").onclick=()=>openV(cur-1);$("#mn").onclick=()=>openV(cur+1);
-modal.addEventListener("click",e=>{if(e.target===modal||e.target.classList.contains("mbox"))closeV();});
+$("#mx").onclick=closeV;$("#mx2").onclick=closeV;$("#mm").onclick=()=>setMuted(!muted);$("#mb").onclick=()=>sheetOpen(!sheet.classList.contains("open"));$("#sx").onclick=()=>sheetOpen(false);$("#mp").onclick=()=>openV(cur-1);$("#mn").onclick=()=>openV(cur+1);
+modal.addEventListener("click",e=>{if(e.target===modal||e.target.classList.contains("mbox")||e.target.classList.contains("mside"))closeV();});
 addEventListener("keydown",e=>{if(!modal.classList.contains("open"))return;if(e.key==="Escape"){if(sheet.classList.contains("open"))sheetOpen(false);else closeV();}if(e.key==="ArrowRight")openV(cur+1);if(e.key==="ArrowLeft")openV(cur-1);});
 
 /* Find your machine */
@@ -1103,6 +1175,84 @@ GUIDES.forEach(g=>{
   x.addEventListener("click",function(){set(false);w.focus();});
   document.addEventListener("click",function(e){if(m.classList.contains("open")&&!m.contains(e.target)&&!w.contains(e.target))set(false);});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&m.classList.contains("open")){set(false);w.focus();}});
+})();
+</script>
+<script>
+/* Profile card effects: white sparkles when it opens, confetti when "Follow" is clicked. */
+(function(){
+  var w=document.getElementById("fsw"),m=document.getElementById("fsm"),fol=m&&m.querySelector(".fol");
+  if(!w||!m)return;
+  var R=Math.random;
+
+  function sparkles(){
+    if(!document.body.animate)return;
+    var cs=getComputedStyle(m),W=document.documentElement.clientWidth,H=document.documentElement.clientHeight;
+    var mw=m.offsetWidth,mh=m.offsetHeight,left=W-parseFloat(cs.right)-mw,top=H-parseFloat(cs.bottom)-mh;
+    var cx=left+mw/2,cy=top+mh/2,N=40;
+    for(var i=0;i<N;i++){
+      /* a random spot just outside (or on) the edge of the card */
+      var side=R()*(2*mw+2*mh),x,y,nx=0,ny=0,out=-8+R()*46;
+      if(side<mw){x=left+side;y=top;ny=-1;}
+      else if(side<mw+mh){x=left+mw;y=top+(side-mw);nx=1;}
+      else if(side<2*mw+mh){x=left+(side-mw-mh);y=top+mh;ny=1;}
+      else{x=left;y=top+(side-2*mw-mh);nx=-1;}
+      x+=nx*out;y+=ny*out;
+      x=Math.max(8,Math.min(W-8,x));y=Math.max(8,Math.min(H-8,y));
+      var size=12+R()*26,el=document.createElement("span");
+      el.className="fxs";el.setAttribute("aria-hidden","true");
+      el.style.width=el.style.height=size+"px";
+      el.style.left=(x-size/2)+"px";el.style.top=(y-size/2)+"px";
+      document.body.appendChild(el);
+      var dx=(x-cx),dy=(y-cy),d=Math.sqrt(dx*dx+dy*dy)||1,drift=14+R()*34,rot=(R()<.5?-1:1)*(60+R()*120);
+      var tx=dx/d*drift,ty=dy/d*drift;
+      var a=el.animate([
+        {opacity:0,transform:"translate(0,0) scale(.1) rotate(0deg)"},
+        {opacity:1,transform:"translate("+tx*.5+"px,"+ty*.5+"px) scale(1) rotate("+rot*.5+"deg)",offset:.4},
+        {opacity:0,transform:"translate("+tx+"px,"+ty+"px) scale(.15) rotate("+rot+"deg)"}
+      ],{duration:850+R()*750,delay:R()*500,easing:"ease-out",fill:"both"});
+      a.onfinish=(function(n){return function(){n.remove();};})(el);
+    }
+  }
+
+  function confetti(ox,oy){
+    var c=document.createElement("canvas"),dpr=Math.min(window.devicePixelRatio||1,2),W=window.innerWidth,H=window.innerHeight;
+    c.setAttribute("aria-hidden","true");
+    c.style.cssText="position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:1100";
+    c.width=W*dpr;c.height=H*dpr;document.body.appendChild(c);
+    var g=c.getContext("2d");g.scale(dpr,dpr);
+    var cols=["#00C08B","#FFC93C","#FF5C8A","#2D9CDB","#7be3c4","#FF9F1C","#9B5DE5"],ps=[],i;
+    for(i=0;i<170;i++){
+      var ang=-Math.PI/2+(R()-.5)*Math.PI*1.25,sp=7+R()*12;
+      ps.push({x:ox,y:oy,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,w:6+R()*7,h:3+R()*5,r:R()*6.3,vr:(R()-.5)*.45,c:cols[(R()*cols.length)|0],dot:R()<.25});
+    }
+    var t0=performance.now(),last=t0,dur=2800;
+    function tick(t){
+      var dt=Math.min(2.5,(t-last)/16.67);last=t;var e=t-t0;
+      g.clearRect(0,0,W,H);
+      var fade=e>dur-800?Math.max(0,(dur-e)/800):1;
+      for(var k=0;k<ps.length;k++){
+        var p=ps[k];p.vy+=.3*dt;p.vx*=Math.pow(.992,dt);p.vy*=Math.pow(.992,dt);
+        p.x+=p.vx*dt;p.y+=p.vy*dt;p.r+=p.vr*dt;
+        g.save();g.globalAlpha=fade;g.translate(p.x,p.y);g.rotate(p.r);g.fillStyle=p.c;
+        if(p.dot){g.beginPath();g.arc(0,0,p.h*.7,0,6.3);g.fill();}else{g.fillRect(-p.w/2,-p.h/2,p.w,p.h);}
+        g.restore();
+      }
+      if(e<dur)requestAnimationFrame(tick);else c.remove();
+    }
+    requestAnimationFrame(tick);
+  }
+
+  w.addEventListener("click",function(){if(m.classList.contains("open"))sparkles();});
+
+  if(fol)fol.addEventListener("click",function(e){
+    var r=fol.getBoundingClientRect();
+    confetti(r.left+r.width/2,r.top+r.height/2);
+    if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey||e.button!==0)return;
+    /* let the confetti show for a moment, then open the Design Space profile (kept under 1s so phones don't block the new tab) */
+    e.preventDefault();
+    var href=fol.href;
+    setTimeout(function(){var n=window.open(href,"_blank");if(n){try{n.opener=null;}catch(_){}}else{location.href=href;}},900);
+  });
 })();
 </script>
 </body>
