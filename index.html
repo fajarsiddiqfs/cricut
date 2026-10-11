@@ -387,11 +387,15 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 .sc .tpts b{display:block;font-size:.9rem;margin-bottom:4px}
 .sc .tpts ul{list-style:disc;display:inline-block;text-align:left;margin:0;padding-left:20px;color:var(--muted);font-size:.9rem;line-height:1.5}
 /* Follow widget + profile popup (opens above the widget) */
-.fsw{position:fixed;right:16px;bottom:16px;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:900;width:68px;height:68px;padding:0;border:0;border-radius:50%;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.28);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.fsw{position:fixed;right:16px;bottom:16px;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:900;width:92px;height:92px;padding:0;border:0;border-radius:50%;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.28);cursor:pointer;transition:transform .2s,box-shadow .2s}
 .fsw:hover{transform:scale(1.06);box-shadow:0 8px 26px rgba(0,0,0,.34)}
 .fsw:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
 .fsw img{display:block;width:100%;height:100%;border-radius:50%}
-.fsm{position:fixed;z-index:901;right:16px;bottom:96px;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(96px + env(safe-area-inset-bottom,0px));width:min(clamp(240px,24vh,300px),calc(100vw - 32px),calc((100vh - 120px)*528/1174));aspect-ratio:528/1174;transform-origin:bottom right;opacity:0;transform:translateY(12px) scale(.92);visibility:hidden;pointer-events:none;transition:opacity .2s,transform .2s,visibility 0s .2s;filter:drop-shadow(0 10px 30px rgba(0,0,0,.35))}
+.fsw::before,.fsw::after{content:"";position:absolute;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5l2.6 7.9 7.9 2.6-7.9 2.6L12 22.5l-2.6-7.9L1.5 12l7.9-2.6z' fill='%2300C08B' stroke='%23fff' stroke-opacity='.9' stroke-width='1' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 3px rgba(0,192,139,.6));animation:fswSpark 2.4s ease-in-out infinite;z-index:2}
+.fsw::before{width:22px;height:22px;top:-9px;left:-7px}
+.fsw::after{width:14px;height:14px;top:14px;left:-15px;animation-delay:1.1s}
+@keyframes fswSpark{0%,100%{transform:scale(.3) rotate(0);opacity:0}50%{transform:scale(1) rotate(90deg);opacity:1}}
+.fsm{position:fixed;z-index:901;right:16px;bottom:120px;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(120px + env(safe-area-inset-bottom,0px));width:min(clamp(240px,24vh,300px),calc(100vw - 32px),calc((100vh - 120px)*528/1174));aspect-ratio:528/1174;transform-origin:bottom right;opacity:0;transform:translateY(12px) scale(.92);visibility:hidden;pointer-events:none;transition:opacity .2s,transform .2s,visibility 0s .2s;filter:drop-shadow(0 10px 30px rgba(0,0,0,.35))}
 @supports(height:100dvh){.fsm{width:min(clamp(240px,24dvh,300px),calc(100vw - 32px),calc((100dvh - 120px)*528/1174))}}
 .fsm.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;transition:opacity .2s,transform .2s,visibility 0s}
 .fsm>svg{display:block;width:100%;height:100%}
@@ -405,7 +409,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 .fsm .lnk{position:absolute;display:block;box-sizing:border-box;text-indent:-9999px;overflow:hidden;border-bottom:2px solid transparent;transition:border-color .15s;cursor:pointer}
 .fsm .lnk:hover,.fsm .lnk:focus-visible{border-bottom-color:#00C08B;outline:0}
 .fsm .lnk:focus-visible{box-shadow:0 0 0 2px #00C08B;border-radius:4px}
-@media(prefers-reduced-motion:reduce){.fsw,.fsm,.fsm.open,.fsm .fbtn,.fsm .lnk{transition:none}}
+@media(prefers-reduced-motion:reduce){.fsw::before,.fsw::after{animation:none;opacity:1}.fsw,.fsm,.fsm.open,.fsm .fbtn,.fsm .lnk{transition:none}}
 </style>
 </head>
 <body>
@@ -781,7 +785,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
   const rot=document.querySelector(".rot");if(!rot)return;
   const tw=rot.querySelector(".tw");
   const words=["Beginners","Business","Creators","Makers","Entrepreneurs","Hobbyists","Designers","Crafters"];
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  /* Runs for everyone, including iPhones with Reduce Motion on (typing text is not movement). */
   let w=0,n=words[0].length,del=true;
   const step=()=>{
     const word=words[w];
