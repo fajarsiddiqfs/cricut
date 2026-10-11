@@ -165,7 +165,7 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .vid{position:absolute;inset:0}
 .vid video{width:100%;height:100%;object-fit:contain;background:#000}
 .vid .none{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;color:#bbb;font-size:.9rem}
-.mhead{position:absolute;top:0;left:0;right:0;z-index:3;padding:12px 14px 30px;display:grid;gap:12px;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
+.mhead{position:absolute;top:0;left:0;right:0;z-index:3;padding:12px 14px 30px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;background:linear-gradient(rgba(0,0,0,.6),transparent);pointer-events:none}
 .mhead>*{pointer-events:auto}
 .seg{display:flex;gap:4px}
 .seg i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
@@ -176,12 +176,15 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .mav img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
 .mwho{flex:1;min-width:0;line-height:1.25}
 .mwho b{display:flex;align-items:center;gap:5px;font-size:.98rem;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.mwho b .mn{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:400px){.mid{gap:6px}.mic{width:38px;height:38px}.mic svg{width:20px;height:20px}}
 .mwho b .mvf{width:15px;height:15px;flex:none;display:block}
 .mwho a{display:block;color:rgba(255,255,255,.9);font-size:.8rem;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .mic{flex:none;position:relative;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .mic svg,.mnb svg{display:block;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .mic svg{width:22px;height:22px}
 .mic.buy{background:var(--brand)}
+.mic.ig{text-decoration:none}
 .mic .ct{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#fff;color:#0b0b0f;font:700 .68rem/18px var(--font);text-align:center}
 .mcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:56px 14px 18px;background:linear-gradient(transparent,rgba(0,0,0,.65));font-weight:700;font-size:1rem;line-height:1.25;text-shadow:0 1px 8px rgba(0,0,0,.85);pointer-events:none}
 .mcap small{display:block;margin-top:2px;font-weight:500;font-size:.82rem;opacity:.92}
@@ -189,8 +192,8 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .msheet.open{transform:none;visibility:visible}
 .msheet .grab{display:block;width:100%;height:26px;border:0;background:none;padding:0;cursor:pointer;position:relative}
 .msheet .grab::before{content:"";position:absolute;left:50%;top:10px;width:44px;height:5px;margin-left:-22px;border-radius:3px;background:#4a4a55}
-.msheet h3{margin:0 0 2px;font-size:1.1rem;letter-spacing:-.01em}
-.msheet p{margin:0 0 12px;color:#b5b5bd;font-size:.85rem}
+.msheet h3{margin:0 0 2px;text-align:center;font-size:1.1rem;letter-spacing:-.01em}
+.msheet p{margin:0 0 12px;text-align:center;color:#b5b5bd;font-size:.85rem}
 .uses{list-style:none;margin:0;padding:0;display:grid;gap:var(--gap)}
 .uses li{display:flex;align-items:center;gap:12px;background:#26262e;border-radius:14px;padding:10px 10px 10px 14px}
 .uses .n{flex:1;min-width:0;font-size:.92rem;line-height:1.25}
@@ -227,10 +230,18 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .vid{cursor:pointer}
 .vid.paused::after{content:"";position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(0,0,0,.5) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M8 5.2v13.6a1 1 0 001.5.86l11-6.8a1 1 0 000-1.72l-11-6.8A1 1 0 008 5.2z'/%3E%3C/svg%3E") 54% 50%/30px no-repeat;pointer-events:none}
 /* "Get Yours!" doodle + white arrow pointing at the bag (shows on every video that has a bag; hides once the list is open) */
-.buyhint{position:absolute;top:calc(100% + 6px);right:-34px;width:130px;height:104px;pointer-events:none;animation:bhPoke 1.5s ease-in-out infinite}
-.mic .buyhint svg{position:absolute;left:0;top:0;width:130px;height:70px;overflow:visible;fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.75)) drop-shadow(0 0 1px rgba(0,0,0,.6))}
-.buyhint .bt{position:absolute;left:-14px;top:58px;pointer-events:auto;white-space:nowrap;color:#fff;font:400 1.45rem/1 "Permanent Marker","Comic Sans MS","Chalkboard SE","Marker Felt",cursive;letter-spacing:.5px;transform:rotate(-6deg);transform-origin:left center;text-shadow:2px 0 0 #111,-2px 0 0 #111,0 2px 0 #111,0 -2px 0 #111,2px 2px 0 #111,-2px -2px 0 #111,2px -2px 0 #111,-2px 2px 0 #111,0 3px 6px rgba(0,0,0,.5)}
+.buyhint{position:absolute;top:calc(100% + 6px);right:-34px;width:130px;height:110px;pointer-events:none;animation:bhPoke 1.5s ease-in-out infinite}
+.mic .buyhint svg{position:absolute;left:0;top:0;width:130px;height:70px;overflow:visible;fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 3px rgba(0,0,0,.3))}
+.buyhint .bt{position:absolute;left:35px;top:46px;pointer-events:auto;white-space:nowrap;color:#fff;text-align:center;font:400 1.45rem/1.1 "Permanent Marker","Comic Sans MS","Chalkboard SE","Marker Felt",cursive;letter-spacing:.5px;transform:translateX(-50%) rotate(-6deg);transform-origin:center;text-shadow:0 1px 3px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.2)}
 .mic[aria-expanded="true"] .buyhint{display:none}
+.buyhint .sp{position:absolute;display:block;width:14px;height:14px;opacity:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 3px rgba(255,255,255,.9)) drop-shadow(0 1px 2px rgba(0,0,0,.25));animation:spFloat 2.2s ease-in-out infinite}
+.buyhint .s1{left:-18px;top:42px;width:13px;height:13px;animation-delay:0s}
+.buyhint .s2{left:82px;top:38px;width:10px;height:10px;animation-delay:.7s;animation-duration:1.9s}
+.buyhint .s3{left:-26px;top:78px;width:10px;height:10px;animation-delay:1.3s;animation-duration:2.5s}
+.buyhint .s4{left:86px;top:76px;width:16px;height:16px;animation-delay:.35s;animation-duration:2.4s}
+.buyhint .s5{left:32px;top:100px;width:9px;height:9px;animation-delay:1s;animation-duration:2s}
+@keyframes spFloat{0%{opacity:0;transform:translateY(4px) scale(.3) rotate(0)}25%{opacity:1;transform:translateY(0) scale(1) rotate(45deg)}60%{opacity:1;transform:translateY(-6px) scale(.8) rotate(100deg)}100%{opacity:0;transform:translateY(-13px) scale(.3) rotate(180deg)}}
+@media(prefers-reduced-motion:reduce){.buyhint .sp{animation:none;opacity:.9}}
 @keyframes bhPoke{0%,100%{transform:translate(0,0)}50%{transform:translate(3px,-5px)}}
 @media(max-width:1099px){.scard.far{display:none}.scard{width:min(calc(var(--sw)*.4),calc((100vw - var(--sw) - 220px)/2))}}
 @media(max-width:900px){.mside,.mclose{display:none}.mxh{display:grid}.mbox{gap:8px}}
@@ -784,8 +795,9 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
         <div class="seg" id="seg"></div>
         <div class="mid">
           <span class="mav" aria-hidden="true"><img src="data:image/webp;base64,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" alt="" width="40" height="40"></span>
-          <div class="mwho"><b>Fajar Siddiq<svg class="mvf" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M14.98 0.89 L16.70 3.86 L20.13 3.87 L20.14 7.30 L23.11 9.02 L21.40 12.00 L23.11 14.98 L20.14 16.70 L20.13 20.13 L16.70 20.14 L14.98 23.11 L12.00 21.40 L9.02 23.11 L7.30 20.14 L3.87 20.13 L3.86 16.70 L0.89 14.98 L2.60 12.00 L0.89 9.02 L3.86 7.30 L3.87 3.87 L7.30 3.86 L9.02 0.89 L12.00 2.60Z" fill="#4193EF"/><path d="M7.25 11.75L10.85 15.35L16.75 8.65" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></svg></b><a href="https://cricut.fajarsiddiq.com" target="_blank" rel="noopener">cricut.fajarsiddiq.com</a></div>
-          <button class="mic buy" id="mb" type="button" aria-label="Buy Cricut Products from this video" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><span class="ct" id="mct"></span><span class="buyhint" aria-hidden="true"><svg viewBox="0 0 130 70" focusable="false"><path d="M37 49C38 31 57 25 74 8"/><path d="M74 8l-13.5 3.8M74 8l-3.8 13.5"/></svg><span class="bt">Get Yours!</span></span></button>
+          <div class="mwho"><b><span class="mn">Fajar Siddiq</span><svg class="mvf" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M14.98 0.89 L16.70 3.86 L20.13 3.87 L20.14 7.30 L23.11 9.02 L21.40 12.00 L23.11 14.98 L20.14 16.70 L20.13 20.13 L16.70 20.14 L14.98 23.11 L12.00 21.40 L9.02 23.11 L7.30 20.14 L3.87 20.13 L3.86 16.70 L0.89 14.98 L2.60 12.00 L0.89 9.02 L3.86 7.30 L3.87 3.87 L7.30 3.86 L9.02 0.89 L12.00 2.60Z" fill="#4193EF"/><path d="M7.25 11.75L10.85 15.35L16.75 8.65" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></svg></b><a href="https://cricut.fajarsiddiq.com" target="_blank" rel="noopener">cricut.fajarsiddiq.com</a></div>
+          <a class="mic ig" id="mig" href="#" target="_blank" rel="noopener" aria-label="Watch this video on Instagram" style="display:none"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <button class="mic buy" id="mb" type="button" aria-label="Get Cricut Latest Smart Cutting Machine from this video" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><span class="ct" id="mct"></span><span class="buyhint" aria-hidden="true"><svg viewBox="0 0 130 70" focusable="false"><path d="M36 40Q62 36 72 6"/><path d="M62.7 13.6L72 6L74.8 17.7"/></svg><span class="bt">Get<br>Yours!</span><i class="sp s1"></i><i class="sp s2"></i><i class="sp s3"></i><i class="sp s4"></i><i class="sp s5"></i></span></button>
           <button class="mic" id="mm" type="button" aria-label="Mute" aria-pressed="false"><svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.8L13 18.5v-13L7.8 9.5H4z"/><path d="M16.2 9.2a4 4 0 010 5.6M18.6 6.8a7.4 7.4 0 010 10.4"/></svg><svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.8L13 18.5v-13L7.8 9.5H4z"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg></button>
           <button class="mic mxh" id="mx2" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
         </div>
@@ -793,7 +805,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
       <div class="mcap" id="mt"></div>
       <div class="msheet" id="sheet">
         <button class="grab" id="sx" type="button" aria-label="Hide list"></button>
-        <h3>Buy Cricut Products</h3>
+        <h3>Get Cricut Latest Smart Cutting Machine</h3>
         <p>Click the button to purchase.</p>
         <ul class="uses" id="uses"></ul>
       </div>
@@ -858,17 +870,29 @@ const SEARCH = { MY:"https://shopee.com.my/search?keyword=", SG:"https://shopee.
 // The shopping bag shown in EVERY video pop-up (Shared Projects and Events & Meet-Ups): the 3 machines.
 // Edit it here once and all videos update. (To give one video different products, put its own uses:[ ... ] instead of uses:BAG.)
 const BAG = [
-  { name:"Cricut Joy 2",     note:"Easiest start",                 links:{MY:"https://cricut.fajarsiddiq.com/joy2",SG:"https://cricut.fajarsiddiq.com/joy2"} },
-  { name:"Cricut Explore 5", note:"Best for starting a business",  links:{MY:"https://cricut.fajarsiddiq.com/explore5",SG:"https://cricut.fajarsiddiq.com/explore5"} },
-  { name:"Cricut Maker 5",   note:"Most powerful",                 links:{MY:"https://cricut.fajarsiddiq.com/maker5",SG:"https://cricut.fajarsiddiq.com/maker5"} }
+  { name:"Cricut Joy™ 2",     note:"Essential Bundle",                 links:{MY:"https://cricut.fajarsiddiq.com/joy2",SG:"https://cricut.fajarsiddiq.com/joy2"} },
+  { name:"Cricut Explore® 5", note:"Essential Bundle",  links:{MY:"https://cricut.fajarsiddiq.com/explore5",SG:"https://cricut.fajarsiddiq.com/explore5"} },
+  { name:"Cricut Maker® 5",   note:"Essential Bundle",                 links:{MY:"https://cricut.fajarsiddiq.com/maker5",SG:"https://cricut.fajarsiddiq.com/maker5"} }
 ];
 
 // Videos: "video" = link to your .mp4, "url" = Instagram/TikTok link (used if no video yet),
 // "uses" = the products shown in the shopping bag for that video.
+/* Shared Projects videos, hosted on Cloudflare R2 (folder /cricut/Solo/). Edit title / tag to change the text on each card. */
+const SOLO="https://pub-80cf938ac23747d88878235161f9dcd3.r2.dev/cricut/Solo/";
 const VIDEOS = [
-  { title:"Custom sticker sheet", tag:"Beginner", video:"", url:"", uses:BAG },
-  { title:"Iron-on tote bag", tag:"Beginner", video:"", url:"", uses:BAG },
-  { title:"Name labels to sell", tag:"Business", video:"", url:"", uses:BAG }
+  { title:"Flocked Iron-On Material", tag:"Heat Transfer", video:SOLO+"Flocked%20Tshirt.mp4", ig:"https://www.instagram.com/p/Dc2wvjCJUiZ/", ig:"https://www.instagram.com/p/Dc2wvjCJUiZ/", thumbAt:3, url:"", uses:BAG },
+  { title:"Glow In The Dark HTV T-shirt", tag:"Heat Transfer", video:SOLO+"Glow%20In%20The%20Dark%20HTV%20Tshirt.mp4", ig:"https://www.instagram.com/p/DYGEW74zWL5/", ig:"https://www.instagram.com/p/DYGEW74zWL5/", url:"", uses:BAG },
+  { title:"Hajj Card, Cricut Joy 2", tag:"Cards", video:SOLO+"Hajj%20Card%20Joy%202.mp4", ig:"https://www.instagram.com/p/DX3Qc28Jdzh/", ig:"https://www.instagram.com/p/DX3Qc28Jdzh/", url:"", uses:BAG },
+  { title:"Glitter Iron-On Heat Transfer Vinyl (HTV)", tag:"Heat Transfer", video:SOLO+"Iron-On%20Glitter%20Vinyl%20Heatpress.mp4", ig:"https://www.instagram.com/p/DSO0HktEQvW/", ig:"https://www.instagram.com/p/DSO0HktEQvW/", url:"", uses:BAG },
+  { title:"Magnetic Sheet", tag:"Materials", video:SOLO+"Magnetic%20Sheet.mp4", url:"", uses:BAG },
+  { title:"Test Cut", tag:"Beginner", video:SOLO+"Test%20Cut.mp4", ig:"https://www.instagram.com/p/DXZhGXVidfK/", ig:"https://www.instagram.com/p/DXZhGXVidfK/", url:"", uses:BAG },
+  { title:"Unboxing Autopress", tag:"Unboxing", video:SOLO+"Unboxing%20Autopress.mp4", ig:"https://www.instagram.com/p/DXT1RZUCSiQ/", ig:"https://www.instagram.com/p/DXT1RZUCSiQ/", url:"", uses:BAG },
+  { title:"Unboxing Easy Press Mini LT", tag:"Unboxing", video:SOLO+"Unboxing%20Easy%20Press%20Mini%20LT.mp4", ig:"https://www.instagram.com/p/DYAKKLPzAI3/", ig:"https://www.instagram.com/p/DYAKKLPzAI3/", url:"", uses:BAG },
+  { title:"Unboxing Explore 4", tag:"Unboxing", video:SOLO+"Unboxing%20Explore%204.mp4", ig:"https://www.instagram.com/p/DXPfvHJE0a6/", ig:"https://www.instagram.com/p/DXPfvHJE0a6/", url:"", uses:BAG },
+  { title:"Unboxing Cricut Joy 2", tag:"Unboxing", video:SOLO+"Unboxing%20Joy2.mp4", ig:"https://www.instagram.com/p/DXp6qdok5wq/", ig:"https://www.instagram.com/p/DXp6qdok5wq/", url:"", uses:BAG },
+  { title:"Smart Vinyl™ – Removable", tag:"Lunch Box", video:SOLO+"Vinyl%20Sticker%20Lunch%20Box.mp4", ig:"https://www.instagram.com/p/DX820SQJQ16/", ig:"https://www.instagram.com/p/DX820SQJQ16/", thumbAt:3, url:"", uses:BAG },
+  { title:"Smart Vinyl™ – Removable", tag:"Supercats", video:SOLO+"Vinyl%20Sticker%20Supercats.mp4", ig:"https://www.instagram.com/p/DcQyFChpMNe/", ig:"https://www.instagram.com/p/DcQyFChpMNe/", thumbAt:3, url:"", uses:BAG },
+  { title:"Smart Vinyl™ – Removable", tag:"Water Bottle", video:SOLO+"Vinyl%20Sticker%20Water%20Bottle%20Joy2.mp4", ig:"https://www.instagram.com/p/Db23p2dpQFN/", ig:"https://www.instagram.com/p/Db23p2dpQFN/", thumbAt:3, url:"", uses:BAG }
 ];
 
 
@@ -877,25 +901,25 @@ const VIDEOS = [
    uses:BAG = the 3 machines in the shopping bag (edit them once in BAG above). */
 const R2 = "https://pub-80cf938ac23747d88878235161f9dcd3.r2.dev/cricut/";
 const EVENTS = [
-  { title:"Ainna Workshop", tag:"Johor, Malaysia", video:R2+"Ainna%20Workshop%20%40JB.mp4", thumbAt:5, url:"", uses:BAG },
-  { title:"Cricut Open House 2025", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Open%20House%202025.mp4", url:"", uses:BAG },
-  { title:"Cricut Party", tag:"Selangor, Malaysia", video:R2+"Cricut%20Party.mp4", url:"", uses:BAG },
-  { title:"Ainna Workshop", tag:"Negeri Sembilan, Malaysia", video:R2+"Ainna%20Workshop%20%40N9.mp4", url:"", uses:BAG },
-  { title:"Cricut Plaza 2026", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Plaza%202026.mp4", url:"", uses:BAG },
-  { title:"Cricut Socials", tag:"TikTok Office HQ, Malaysia", video:R2+"Cricut%20Socials%20MY.mp4", url:"", uses:BAG },
-  { title:"Cricut Socials", tag:"Geylang, Singapore", video:R2+"Cricut%20Socials%20SG.mp4", url:"", uses:BAG },
-  { title:"Lisa Workshop", tag:"Kuala Lumpur, Malaysia", video:R2+"Lisa%20Workshop%20%40KL.mp4", url:"", uses:BAG },
-  { title:"Maker 5 Launch Event Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Maker%205%20Spotlight.mp4", thumbAt:5, url:"", uses:BAG },
-  { title:"Meet & Kraf", tag:"Kedah, Malaysia", video:R2+"Meet%26Kraf.mp4", url:"", uses:BAG },
-  { title:"Maker 4, Mothers Day Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Mothers%20Day%20Spotlight.mp4", url:"", uses:BAG },
-  { title:"Northpoint City Mall", tag:"Yishun, Singapore", video:R2+"Northpoint.mp4", url:"", uses:BAG }
+  { title:"Cricut Workshop", tag:"Johor, Malaysia", video:R2+"Ainna%20Workshop%20%40JB.mp4", ig:"https://www.instagram.com/p/DbnjVHPJ-DI/", ig:"https://www.instagram.com/p/DbnjVHPJ-DI/", thumbAt:5, url:"", uses:BAG },
+  { title:"Cricut Open House", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Open%20House%202025.mp4", ig:"https://www.instagram.com/p/DRq7MZNEbMc/", ig:"https://www.instagram.com/p/DRq7MZNEbMc/", url:"", uses:BAG },
+  { title:"Cricut Party", mt:"Cricut Party", tag:"Selangor, Malaysia", video:R2+"Cricut%20Party.mp4", ig:"https://www.instagram.com/p/DSF2SCNE7-w/", ig:"https://www.instagram.com/p/DSF2SCNE7-w/", url:"", uses:BAG },
+  { title:"Cricut Workshop", tag:"Negeri Sembilan, Malaysia", video:R2+"Ainna%20Workshop%20%40N9.mp4", ig:"https://www.instagram.com/p/DdtCVeepBxb/", ig:"https://www.instagram.com/p/DdtCVeepBxb/", url:"", uses:BAG },
+  { title:"Cricut Plaza", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Plaza%202026.mp4", ig:"https://www.instagram.com/p/DXmQZpwk6K0/", ig:"https://www.instagram.com/p/DXmQZpwk6K0/", url:"", uses:BAG },
+  { title:"Cricut Socials", tag:"TikTok Office HQ, Malaysia", video:R2+"Cricut%20Socials%20MY.mp4", ig:"https://www.instagram.com/p/Dd_bDJDJTe6/", ig:"https://www.instagram.com/p/Dd_bDJDJTe6/", url:"", uses:BAG },
+  { title:"Cricut Socials", tag:"Geylang, Singapore", video:R2+"Cricut%20Socials%20SG.mp4", ig:"https://www.instagram.com/p/DdVs4UzJMUQ/", ig:"https://www.instagram.com/p/DdVs4UzJMUQ/", url:"", uses:BAG },
+  { title:"Cricut Workshop", tag:"Kuala Lumpur, Malaysia", video:R2+"Lisa%20Workshop%20%40KL.mp4", ig:"https://www.instagram.com/p/DZkn4pOp0E2/", ig:"https://www.instagram.com/p/DZkn4pOp0E2/", url:"", uses:BAG },
+  { title:"Maker 5 Launch Event Spotlight", mt:"Cricut Maker 5 Launch Event @Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Maker%205%20Spotlight.mp4", ig:"https://www.instagram.com/p/Dc833f8JYSi/", ig:"https://www.instagram.com/p/Dc833f8JYSi/", thumbAt:5, url:"", uses:BAG },
+  { title:"Meet & Kraf", mt:"Cricut For Students, Meet & Kraf Workshop", tag:"Kedah, Malaysia", video:R2+"Meet%26Kraf.mp4", ig:"https://www.instagram.com/p/DcwFn6jJ3Od/", ig:"https://www.instagram.com/p/DcwFn6jJ3Od/", url:"", uses:BAG },
+  { title:"Maker 4, Mothers Day Spotlight", mt:"Cricut Maker 4, Mothers Day @Spotlight", tag:"Plaza Singapura, Singapore", video:R2+"Mothers%20Day%20Spotlight.mp4", ig:"https://www.instagram.com/p/DX6oC1apLEz/", ig:"https://www.instagram.com/p/DX6oC1apLEz/", url:"", uses:BAG },
+  { title:"Northpoint City Mall", mt:"Cricut @Harvey Norman, Northpoint", tag:"Yishun, Singapore", video:R2+"Northpoint.mp4", ig:"https://www.instagram.com/p/DYLy2zmJsLz/", ig:"https://www.instagram.com/p/DYLy2zmJsLz/", url:"", uses:BAG }
 ];
 
 // Machines shown in "Find Your Machine".
 const MACHINES = [
-  { id:"sell", rating:"5.0", name:"Cricut Explore 5", badge:"Best for starting a business", links:{MY:"https://cricut.fajarsiddiq.com/explore5",SG:"https://cricut.fajarsiddiq.com/explore5"}, text:"Cuts a wide range of materials. A solid choice to start selling." },
-  { id:"big",  rating:"5.0", name:"Cricut Maker 5",   badge:"Most powerful", links:{MY:"https://cricut.fajarsiddiq.com/maker5",SG:"https://cricut.fajarsiddiq.com/maker5"}, text:"Handles thicker materials and fabric. Pick this for bigger projects." },
-  { id:"fun",  rating:"5.0", name:"Cricut Joy 2",     badge:"Easiest start", links:{MY:"https://cricut.fajarsiddiq.com/joy2",SG:"https://cricut.fajarsiddiq.com/joy2"}, text:"Small, simple and quick. Great for cards, labels and stickers." }
+  { id:"sell", rating:"5.0", name:"Cricut Explore® 5", badge:"Best for starting a business", links:{MY:"https://cricut.fajarsiddiq.com/explore5",SG:"https://cricut.fajarsiddiq.com/explore5"}, text:"Cuts a wide range of materials. A solid choice to start selling." },
+  { id:"big",  rating:"5.0", name:"Cricut Maker® 5",   badge:"Most powerful", links:{MY:"https://cricut.fajarsiddiq.com/maker5",SG:"https://cricut.fajarsiddiq.com/maker5"}, text:"Handles thicker materials and fabric. Pick this for bigger projects." },
+  { id:"fun",  rating:"5.0", name:"Cricut Joy™ 2",     badge:"Easiest start", links:{MY:"https://cricut.fajarsiddiq.com/joy2",SG:"https://cricut.fajarsiddiq.com/joy2"}, text:"Small, simple and quick. Great for cards, labels and stickers." }
 ];
 
 // Guides & Checklists: paste each link between the quotes (starts with https://). Cards with no link show "Coming soon".
@@ -938,12 +962,14 @@ VIDEOS.forEach((v,i)=>{
 
 /* Modal */
 const modal=$("#modal"),stage=$("#vid"),sheet=$("#sheet"),sideL=$("#sideL"),sideR=$("#sideR"),AV=$(".mav img").src;let cur=0,list=VIDEOS,muted=false;
+/* In the pop-up, every Events & Meet-Ups title starts with "Cricut" (not doubled if it already does) */
+function mTitle(v){if(v.mt)return v.mt;return(EVENTS.indexOf(v)>-1&&!/^cricut\b/i.test(v.title))?"Cricut "+v.title:v.title;}
 function sheetOpen(o){sheet.classList.toggle("open",o);$("#mb").setAttribute("aria-expanded",o?"true":"false");}
 function setMuted(m){muted=m;const b=$("#mm");b.classList.toggle("muted",m);b.setAttribute("aria-pressed",m?"true":"false");b.setAttribute("aria-label",m?"Unmute":"Mute");const p=stage.querySelector("video");if(p)p.muted=m;}
 function sideCard(i){
   const v=list[i];
-  const b=el("button","scard"+(Math.abs(i-cur)>1?" far":""),'<span class="sav"><img src="'+AV+'" alt=""></span><span class="snm">'+esc(v.title)+(v.tag?'<small>'+esc(v.tag)+'</small>':'')+'</span>');
-  b.type="button";b.setAttribute("aria-label","Watch: "+v.title+(v.tag?" "+v.tag:""));
+  const b=el("button","scard"+(Math.abs(i-cur)>1?" far":""),'<span class="sav"><img src="'+AV+'" alt=""></span><span class="snm">'+esc(mTitle(v))+(v.tag?'<small>'+esc(v.tag)+'</small>':'')+'</span>');
+  b.type="button";b.setAttribute("aria-label","Watch: "+mTitle(v)+(v.tag?" "+v.tag:""));
   if(v.thumb||v.video)b.prepend(thumbEl(v));
   b.onclick=()=>openV(i);
   return b;
@@ -954,26 +980,34 @@ function renderSides(){
   for(let d=1;d<=2;d++){const i=cur+d;if(i<list.length)sideR.appendChild(sideCard(i));}
   $("#mp").disabled=cur<=0;$("#mn").disabled=cur>=list.length-1;
 }
+function clearVideo(){
+  const o=stage.querySelector("video");
+  if(o){o.onpause=o.onplay=o.onplaying=o.onseeked=o.oncanplay=o.onended=o.ontimeupdate=o.onclick=null;try{o.pause();o.removeAttribute("src");o.load();}catch(_){}}
+  stage.textContent="";stage.classList.remove("paused");
+}
 function openV(i,l){
   if(l)list=l;
   if(i<0||i>=list.length)return;
   cur=i;const v=list[cur];
-  stage.textContent="";stage.classList.remove("paused");let p=null;
+  clearVideo();let p=null;
   if(v.video){
     p=document.createElement("video");p.src=v.video;p.playsInline=true;p.autoplay=true;p.muted=muted;
     p.onclick=()=>{p.paused?p.play():p.pause();};
-    p.onpause=()=>stage.classList.add("paused");p.onplay=()=>stage.classList.remove("paused");
+    /* the play circle always mirrors the video's real state, so it can never get stuck while the video is playing */
+    const sync=()=>{if(p.parentNode!==stage)return;stage.classList.toggle("paused",p.paused&&!p.ended);};
+    p.onpause=p.onplay=p.onplaying=p.onseeked=p.oncanplay=sync;
     p.onended=()=>{if(cur<list.length-1)openV(cur+1);};
     stage.appendChild(p);
-    const go=p.play();if(go&&go.catch)go.catch(()=>{setMuted(true);const g2=p.play();if(g2&&g2.catch)g2.catch(()=>{});});
+    const go=p.play();if(go&&go.catch)go.catch(()=>{if(p.parentNode!==stage)return;setMuted(true);const g2=p.play();if(g2&&g2.catch)g2.catch(()=>{if(p.parentNode===stage&&p.paused)stage.classList.add("paused");});});
   }
   else stage.appendChild(el("div","none",v.url?'Video opens on social.<br><a href="'+esc(v.url)+'" target="_blank" rel="noopener" style="color:#fff">Watch it here →</a>':"Video coming soon."));
   $("#mm").style.display=v.video?"":"none";setMuted(muted);
-  const mt=$("#mt");mt.textContent=v.title;
-  if(list===EVENTS&&v.tag){const sm=document.createElement("small");sm.textContent=v.tag;mt.appendChild(sm);}
+  const ig=$("#mig");if(v.ig){ig.href=v.ig;ig.style.display="";}else{ig.removeAttribute("href");ig.style.display="none";}
+  const mt=$("#mt");mt.textContent=mTitle(v);
+  if(v.tag){const sm=document.createElement("small");sm.textContent=v.tag;mt.appendChild(sm);}
   const seg=$("#seg");seg.innerHTML=list.map((_,k)=>'<i'+(k<cur?' class="done"':'')+'><b></b></i>').join("");
   const bar=seg.children[cur].firstChild;
-  if(p)p.ontimeupdate=()=>{bar.style.width=(p.duration?p.currentTime/p.duration*100:0)+"%";};
+  if(p)p.ontimeupdate=()=>{bar.style.width=(p.duration?p.currentTime/p.duration*100:0)+"%";if(p.parentNode===stage)stage.classList.toggle("paused",p.paused&&!p.ended);};
   else seg.children[cur].classList.add("done");
   sheetOpen(false);renderUses();renderSides();
   modal.classList.add("open");document.body.style.overflow="hidden";
@@ -985,12 +1019,12 @@ function renderUses(){
   $("#uses").innerHTML=has?v.uses.map(u=>'<li><div class="n">'+esc(u.name)+(u.note?'<small>'+esc(u.note)+'</small>':'')+'</div><a href="'+esc(buy(u))+'" target="_blank" rel="sponsored noopener"><span class="shp" aria-hidden="true"><img src="'+SHOPEE_ICON+'" alt=""></span>Buy on Shopee</a></li>').join(""):"";
   if(!has)sheetOpen(false);
 }
-function closeV(){sheetOpen(false);modal.classList.remove("open");document.body.style.overflow="";stage.textContent="";stage.classList.remove("paused");sideL.textContent="";sideR.textContent="";}
+function closeV(){sheetOpen(false);modal.classList.remove("open");document.body.style.overflow="";clearVideo();sideL.textContent="";sideR.textContent="";}
 /* Events carousel */
 const track=$("#evTrack");
 EVENTS.forEach((v,i)=>{
-  const b=el("button","vcard",PLAY+'<span class="ttl">'+esc(v.title)+'<small>'+esc(v.tag||"")+'</small></span>');
-  b.type="button"; b.setAttribute("aria-label","Watch: "+v.title+" "+(v.tag||""));
+  const b=el("button","vcard",PLAY+'<span class="ttl">'+esc(mTitle(v))+'<small>'+esc(v.tag||"")+'</small></span>');
+  b.type="button"; b.setAttribute("aria-label","Watch: "+mTitle(v)+" "+(v.tag||""));
   if(v.thumb||v.video)b.prepend(thumbEl(v));
   b.onclick=()=>openV(i,EVENTS);
   track.appendChild(b);
@@ -1056,7 +1090,7 @@ function carousel(tr,bar){
 }
 carousel($("#rail"),$("#railBar"));
 carousel(track,$("#evBar"));
-$("#mx").onclick=closeV;$("#mx2").onclick=closeV;$("#mm").onclick=()=>setMuted(!muted);$("#mb").onclick=()=>sheetOpen(!sheet.classList.contains("open"));$("#sx").onclick=()=>sheetOpen(false);$("#mp").onclick=()=>openV(cur-1);$("#mn").onclick=()=>openV(cur+1);
+$("#mig").onclick=()=>{const p=stage.querySelector("video");if(p&&!p.paused)p.pause();};$("#mx").onclick=closeV;$("#mx2").onclick=closeV;$("#mm").onclick=()=>setMuted(!muted);$("#mb").onclick=()=>sheetOpen(!sheet.classList.contains("open"));$("#sx").onclick=()=>sheetOpen(false);$("#mp").onclick=()=>openV(cur-1);$("#mn").onclick=()=>openV(cur+1);
 modal.addEventListener("click",e=>{if(e.target===modal||e.target.classList.contains("mbox")||e.target.classList.contains("mside"))closeV();});
 addEventListener("keydown",e=>{if(!modal.classList.contains("open"))return;if(e.key==="Escape"){if(sheet.classList.contains("open"))sheetOpen(false);else closeV();}if(e.key==="ArrowRight")openV(cur+1);if(e.key==="ArrowLeft")openV(cur-1);});
 
