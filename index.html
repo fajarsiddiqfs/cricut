@@ -578,11 +578,6 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
   </div>
 </section>
 
-<section class="wrap" id="projects">
-  <h2 class="big">Shared Projects<small>Follow me on Cricut Design Space</small></h2>
-  <div class="sp" id="sp"></div>
-</section>
-
 <section class="wrap" id="guides">
   <span id="learn"></span>
   <h2 class="big">Guides &amp; Checklists<small>Simple guides, cheatsheets and checklists to help you understand your Cricut and start making with confidence</small></h2>
@@ -812,7 +807,6 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
    ===================================================== */
 // Shopee search page per country (used until you paste real links)
 const SEARCH = { MY:"https://shopee.com.my/search?keyword=", SG:"https://shopee.sg/search?keyword=" };
-const DESIGNSPACE = "";   // paste your Cricut Design Space profile link here (starts with https://) to show a button under Shared Projects
 
 // Videos: "video" = link to your .mp4, "url" = Instagram/TikTok link (used if no video yet),
 // "uses" = everything you used in that video.
@@ -1005,8 +999,6 @@ GUIDES.forEach(g=>{
   const act=g.link?'<a class="btn" href="'+esc(g.link)+'" target="_blank" rel="noopener">Download Now</a>':'<span class="soon">Coming soon</span>';
   $("#guideList").appendChild(el("div","gc",'<span class="tg">'+esc(g.tag)+'</span><h3>'+esc(g.t)+'</h3><p>'+esc(g.d)+'</p>'+act));
 });
-
-if(DESIGNSPACE){const a=el("a","btn brand","See my projects on Design Space");a.href=DESIGNSPACE;a.target="_blank";a.rel="noopener";$("#sp").prepend(a);}
 
 /* Mobile menu */
 (function(){
