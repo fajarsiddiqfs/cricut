@@ -180,20 +180,16 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 @media(max-width:400px){.mid{gap:6px}.mic{width:38px;height:38px}.mic svg{width:20px;height:20px}}
 .mwho b .mvf{width:15px;height:15px;flex:none;display:block}
 .mwho a{display:block;color:rgba(255,255,255,.9);font-size:.8rem;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.mwho a{display:flex;align-items:center;gap:5px}
+.mwho a svg{width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mwho a span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .mic{flex:none;position:relative;width:42px;height:42px;border:0;border-radius:50%;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .mic svg,.mnb svg{display:block;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .mic svg{width:22px;height:22px}
 .mic.buy{background:transparent}
 .mic>svg{filter:drop-shadow(0 1px 3px rgba(0,0,0,.55))}
-.mic.ig{text-decoration:none}
-.mic.ig,.mic.buy{width:34px;height:42px}
-.mic.ig{margin-right:-10px}
-.mic.shr{width:34px;height:42px;margin-right:-10px}
-.mtoast{position:absolute;left:50%;bottom:76px;transform:translateX(-50%);z-index:6;display:grid;justify-items:center;gap:6px;opacity:0;pointer-events:none;transition:opacity .2s}
-.mtoast b{background:#fff;color:#0b0b0f;padding:9px 16px;border-radius:99px;font:600 .85rem/1.2 var(--font);white-space:nowrap}
-.mtoast small{font:700 .72rem/1 var(--font);color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7)}
-.mtoast.on{opacity:1}
-@media(max-width:400px){.mic.ig,.mic.buy,.mic.shr{width:32px;height:38px}.mic.ig,.mic.shr{margin-right:-6px}}
+.mic.buy{width:34px;height:42px}
+@media(max-width:400px){.mic.buy{width:32px;height:38px}.mwho b{font-size:.92rem}.mwho a{font-size:.76rem}}
 .mic .ct{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#fff;color:#0b0b0f;font:700 .68rem/18px var(--font);text-align:center}
 .mcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:56px 14px 18px;background:linear-gradient(transparent,rgba(0,0,0,.65));font-weight:700;font-size:1rem;line-height:1.25;text-shadow:0 1px 8px rgba(0,0,0,.85);pointer-events:none}
 .mcap small{display:block;margin-top:2px;font-weight:500;font-size:.82rem;opacity:.92}
@@ -827,16 +823,13 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
         <div class="seg" id="seg"></div>
         <div class="mid">
           <span class="mav" aria-hidden="true"><img src="data:image/webp;base64,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" alt="" width="40" height="40"></span>
-          <div class="mwho"><b><span class="mn">Fajar Siddiq</span><svg class="mvf" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M14.98 0.89 L16.70 3.86 L20.13 3.87 L20.14 7.30 L23.11 9.02 L21.40 12.00 L23.11 14.98 L20.14 16.70 L20.13 20.13 L16.70 20.14 L14.98 23.11 L12.00 21.40 L9.02 23.11 L7.30 20.14 L3.87 20.13 L3.86 16.70 L0.89 14.98 L2.60 12.00 L0.89 9.02 L3.86 7.30 L3.87 3.87 L7.30 3.86 L9.02 0.89 L12.00 2.60Z" fill="#4193EF"/><path d="M7.25 11.75L10.85 15.35L16.75 8.65" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></svg></b><a href="https://cricut.fajarsiddiq.com" target="_blank" rel="noopener">cricut.fajarsiddiq.com</a></div>
-          <button class="mic shr" id="msh" type="button" aria-label="Copy website link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 3.6L3.9 10.4l6.6 3.1 3.1 6.6z"/></svg></button>
-          <a class="mic ig" id="mig" href="#" target="_blank" rel="noopener" aria-label="Watch this video on Instagram" style="display:none"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <div class="mwho"><b><span class="mn">Fajar Siddiq</span><svg class="mvf" viewBox="0 0 24 24" role="img" aria-label="Verified"><path d="M14.98 0.89 L16.70 3.86 L20.13 3.87 L20.14 7.30 L23.11 9.02 L21.40 12.00 L23.11 14.98 L20.14 16.70 L20.13 20.13 L16.70 20.14 L14.98 23.11 L12.00 21.40 L9.02 23.11 L7.30 20.14 L3.87 20.13 L3.86 16.70 L0.89 14.98 L2.60 12.00 L0.89 9.02 L3.86 7.30 L3.87 3.87 L7.30 3.86 L9.02 0.89 L12.00 2.60Z" fill="#4193EF"/><path d="M7.25 11.75L10.85 15.35L16.75 8.65" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></svg></b><a id="mig" href="https://instagram.com/fajarsiddiq" target="_blank" rel="noopener" aria-label="Watch this video on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg><span>fajarsiddiq</span></a></div>
           <button class="mic buy" id="mb" type="button" aria-label="Get Your Cricut Machine from this video" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8h13l-1 12h-11z"/><path d="M9 8V7a3 3 0 016 0v1"/></svg><span class="ct" id="mct"></span><span class="buyhint" aria-hidden="true"><svg viewBox="0 0 130 70" focusable="false"><path d="M36 40Q62 36 72 6"/><path d="M62.7 13.6L72 6L74.8 17.7"/></svg><span class="bt">Get<br>Yours!</span><i class="sp s1"></i><i class="sp s2"></i><i class="sp s3"></i><i class="sp s4"></i><i class="sp s5"></i></span></button>
           <button class="mic" id="mm" type="button" aria-label="Mute" aria-pressed="false"><svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.8L13 18.5v-13L7.8 9.5H4z"/><path d="M16.2 9.2a4 4 0 010 5.6M18.6 6.8a7.4 7.4 0 010 10.4"/></svg><svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5v5h3.8L13 18.5v-13L7.8 9.5H4z"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg></button>
           <button class="mic mxh" id="mx2" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
         </div>
       </div>
       <div class="mcap" id="mt"></div>
-      <div class="mtoast" id="mtoast" role="status" aria-live="polite"></div>
       <div class="msheet" id="sheet">
         <button class="grab" id="sx" type="button" aria-label="Hide list"></button>
         <h3>Get Your Cricut Machine</h3>
@@ -1038,7 +1031,7 @@ function openV(i,l){
   }
   else stage.appendChild(el("div","none",v.url?'Video opens on social.<br><a href="'+esc(v.url)+'" target="_blank" rel="noopener" style="color:#fff">Watch it here →</a>':"Video coming soon."));
   $("#mm").style.display=v.video?"":"none";setMuted(muted);
-  const ig=$("#mig");if(v.ig){ig.href=v.ig;ig.style.display="";}else{ig.removeAttribute("href");ig.style.display="none";}
+  const ig=$("#mig");ig.href=v.ig||"https://instagram.com/fajarsiddiq";
   const mt=$("#mt");mt.textContent=mTitle(v);
   if(v.tag){const sm=document.createElement("small");sm.textContent=v.tag;mt.appendChild(sm);}
   const seg=$("#seg");seg.innerHTML=list.map((_,k)=>'<i'+(k<cur?' class="done"':'')+'><b></b></i>').join("");
@@ -1162,16 +1155,6 @@ $("#mig").onclick=()=>{const p=stage.querySelector("video");if(p&&!p.paused)p.pa
   sheet.addEventListener("click",e=>{if(swallow){e.stopPropagation();e.preventDefault();swallow=false;}},true);
   /* tap/click anywhere on the video area (not the list or the top icons) closes the list */
   $(".stage").addEventListener("click",e=>{if(sheet.classList.contains("open")&&!e.target.closest(".msheet,.mhead"))sheetOpen(false);});
-})();
-/* Share icon: copies the website link and shows it with a small "Copied!" */
-(function(){
-  const URL_="https://cricut.fajarsiddiq.com",tt=$("#mtoast");let tm;
-  function toast(ok){tt.innerHTML=(ok?"<small>Copied!</small>":"")+"<b>"+URL_+"</b>";tt.classList.add("on");clearTimeout(tm);tm=setTimeout(()=>tt.classList.remove("on"),2200);}
-  function legacy(){try{const t=document.createElement("textarea");t.value=URL_;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();const ok=document.execCommand("copy");t.remove();toast(ok);}catch(e){toast(false);}}
-  $("#msh").onclick=()=>{
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(URL_).then(()=>toast(true),legacy);}
-    else legacy();
-  };
 })();
 modal.addEventListener("click",e=>{if(e.target===modal||e.target.classList.contains("mbox")||e.target.classList.contains("mside"))closeV();});
 addEventListener("keydown",e=>{if(!modal.classList.contains("open"))return;if(e.key==="Escape"){if(sheet.classList.contains("open"))sheetOpen(false);else closeV();}if(e.key==="ArrowRight")openV(cur+1);if(e.key==="ArrowLeft")openV(cur-1);});
