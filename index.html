@@ -322,6 +322,9 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .gc p{margin:0 0 8px;color:var(--muted);font-size:.88rem;line-height:1.45;flex:1}
 .gc .btn{align-self:stretch;justify-content:center;text-align:center;min-height:42px;font-size:.85rem;padding:0 18px}
 .gc .soon{align-self:stretch;display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:42px;padding:0 18px;border-radius:99px;background:var(--bg);color:var(--muted);font:600 .85rem var(--font)}
+.gc .btn,.gc .soon{white-space:nowrap}
+@media(min-width:1000px) and (max-width:1250px){.gc .btn,.gc .soon{padding:0 8px;font-size:.8rem}}
+@media(max-width:380px){.gc .btn,.gc .soon{padding:0 6px;font-size:.76rem}}
 .wk{padding:var(--card);border-radius:20px;background:var(--soft);display:flex;flex-direction:column;gap:8px}
 .wk h3{margin:0;font-size:1.3rem;letter-spacing:-.02em}
 .wk ul{margin:0 0 8px;padding-left:1.1em;color:var(--muted);font-size:.92rem}
@@ -979,7 +982,7 @@ const R2 = "https://pub-80cf938ac23747d88878235161f9dcd3.r2.dev/cricut/";
 const EVENTS = [
   { title:"Cricut Workshop", tag:"Johor, Malaysia", video:R2+"Ainna%20Workshop%20%40JB.mp4", ig:"https://www.instagram.com/p/DbnjVHPJ-DI/", ig:"https://www.instagram.com/p/DbnjVHPJ-DI/", thumbAt:5, url:"", uses:BAG },
   { title:"Cricut Open House", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Open%20House%202025.mp4", ig:"https://www.instagram.com/p/DRq7MZNEbMc/", ig:"https://www.instagram.com/p/DRq7MZNEbMc/", url:"", uses:BAG },
-  { title:"Cricut Party", mt:"Cricut Party", tag:"Selangor, Malaysia", video:R2+"Cricut%20Party.mp4", thumbAt:5, ig:"https://www.instagram.com/p/DSF2SCNE7-w/", ig:"https://www.instagram.com/p/DSF2SCNE7-w/", url:"", uses:BAG },
+  { title:"Cricut Party", mt:"Cricut Party", tag:"Selangor, Malaysia", video:R2+"Cricut%20Party.mp4", thumbAt:10, ig:"https://www.instagram.com/p/DSF2SCNE7-w/", ig:"https://www.instagram.com/p/DSF2SCNE7-w/", url:"", uses:BAG },
   { title:"Cricut Workshop", tag:"Negeri Sembilan, Malaysia", video:R2+"Ainna%20Workshop%20%40N9.mp4", ig:"https://www.instagram.com/p/DdtCVeepBxb/", ig:"https://www.instagram.com/p/DdtCVeepBxb/", url:"", uses:BAG },
   { title:"Cricut Plaza", tag:"Sandbox Coworking Space, Malaysia", video:R2+"Cricut%20Plaza%202026.mp4", ig:"https://www.instagram.com/p/DXmQZpwk6K0/", ig:"https://www.instagram.com/p/DXmQZpwk6K0/", url:"", uses:BAG },
   { title:"Cricut Socials", tag:"TikTok Office HQ, Malaysia", video:R2+"Cricut%20Socials%20MY.mp4", ig:"https://www.instagram.com/p/Dd_bDJDJTe6/", ig:"https://www.instagram.com/p/Dd_bDJDJTe6/", url:"", uses:BAG },
