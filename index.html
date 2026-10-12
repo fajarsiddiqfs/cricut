@@ -204,7 +204,8 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 .msheet .uses{gap:8px}
 .msheet .uses li{flex-direction:row;align-items:center;gap:12px;padding:12px;text-align:left}
 .msheet .uses .n{flex:1;min-width:0;text-align:left;font-size:1.4rem}
-@media(max-width:480px){.msheet .uses .n{font-size:clamp(.9rem,4.4vw,1.4rem);white-space:nowrap;text-wrap:nowrap}.msheet .uses .n small{font-size:.74rem}}
+@media(max-width:480px){.msheet .uses .n{font-size:clamp(.9rem,4.4vw,1.4rem);white-space:nowrap;text-wrap:nowrap}.msheet .uses .n small{font-size:.74rem}.msheet .uses{grid-template-columns:minmax(0,1fr)}.msheet .uses li{flex-direction:column;align-items:stretch;gap:10px}.msheet .uses li .bs{flex-direction:row;width:100%;gap:8px}.msheet .uses li .bs .bc{flex:1;min-width:0}.msheet .uses li .bs .bc a{justify-content:center;padding:8px 6px;font-size:.74rem}.msheet .uses li .bs .bc a .bo{display:none}}
+.bo{font-style:normal}
 .msheet .uses .bs{display:flex;flex-direction:column;gap:6px;flex:none;width:auto}
 .msheet .uses .bs .bc a{width:100%;padding:8px 12px;font-size:.76rem;gap:6px;white-space:nowrap}
 .msheet .uses .bs .bc a{justify-content:flex-start;gap:6px;padding:8px 12px;font-size:.74rem}
@@ -1048,7 +1049,7 @@ function renderUses(){
   $("#mb").style.display=has?"":"none";$("#mct").textContent=has?v.uses.length:"";
   const FL={MY:$('.mtog [data-c="MY"] svg').outerHTML,SG:$('.mtog [data-c="SG"] svg').outerHTML},NM={MY:"Malaysia",SG:"Singapore"};
   $("#uses").innerHTML=has?v.uses.map(u=>{
-    const bs=["MY","SG"].map(c=>{const href=((u.links||{})[c])||(SEARCH[c]+encodeURIComponent(u.name+" cricut"));return '<div class="bc"><a href="'+esc(href)+'" target="_blank" rel="sponsored noopener" aria-label="Buy '+esc(u.name)+' on Shopee '+NM[c]+'" title="Buy in '+NM[c]+'">'+(FL[c]+'<img class="shi" src="'+SHOPEE_ICON+'" alt="" aria-hidden="true"><span>Buy on Shopee '+c+'</span></a>')+'</div>';}).join("");
+    const bs=["MY","SG"].map(c=>{const href=((u.links||{})[c])||(SEARCH[c]+encodeURIComponent(u.name+" cricut"));return '<div class="bc"><a href="'+esc(href)+'" target="_blank" rel="sponsored noopener" aria-label="Buy '+esc(u.name)+' on Shopee '+NM[c]+'" title="Buy in '+NM[c]+'">'+(FL[c]+'<img class="shi" src="'+SHOPEE_ICON+'" alt="" aria-hidden="true"><span><i class="bo">Buy on </i>Shopee '+c+'</span></a>')+'</div>';}).join("");
     return '<li><div class="n">'+esc(u.name)+(u.note?'<small>'+esc(u.note)+'</small>':'')+'</div><div class="bs">'+bs+'</div></li>';
   }).join(""):"";
   if(!has)sheetOpen(false);
