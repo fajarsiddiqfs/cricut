@@ -285,6 +285,8 @@ h2.big small .si [stroke]{stroke:#0b0b0f}
 /* find your machine */
 .machines{display:grid;gap:var(--gap)}
 @media(min-width:760px){.machines{grid-template-columns:repeat(3,1fr)}}
+.aff{text-align:center;font-size:.78rem;line-height:1.4;color:var(--muted);max-width:520px;margin:-8px auto clamp(16px,3vw,22px)}
+.aff-s{display:block;margin-top:4px;font-size:.72rem;opacity:.85}
 .mtog{display:flex;justify-content:center;gap:4px;width:max-content;max-width:100%;margin:0 auto clamp(20px,4vw,28px);padding:4px;border-radius:99px;background:var(--soft)}
 .mtog button{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--muted);font:600 .78rem var(--font);padding:0 16px;height:42px;border-radius:99px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
 .mtog .fl{width:18px;height:12px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,.14);flex:none}
@@ -702,6 +704,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
     <button type="button" data-c="MY" aria-pressed="true"><svg class="fl" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" fill="#fff"/><rect y="0.000" width="28" height="1.449" fill="#CC0001"/><rect y="2.857" width="28" height="1.449" fill="#CC0001"/><rect y="5.714" width="28" height="1.449" fill="#CC0001"/><rect y="8.571" width="28" height="1.449" fill="#CC0001"/><rect y="11.429" width="28" height="1.449" fill="#CC0001"/><rect y="14.286" width="28" height="1.449" fill="#CC0001"/><rect y="17.143" width="28" height="1.449" fill="#CC0001"/><rect width="14" height="10" fill="#010066"/><circle cx="5.4" cy="5" r="3.1" fill="#FC0"/><circle cx="6.3" cy="5" r="2.55" fill="#010066"/><g fill="#FC0"><polygon points="9.70,2.50 10.13,4.10 11.65,3.44 10.67,4.78 12.14,5.56 10.48,5.62 10.78,7.25 9.70,6.00 8.62,7.25 8.92,5.62 7.26,5.56 8.73,4.78 7.75,3.44 9.27,4.10"/></g></svg>Buy in Malaysia</button>
     <button type="button" data-c="SG" aria-pressed="false"><svg class="fl" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="10" fill="#EF3340"/><rect y="10" width="28" height="10" fill="#fff"/><circle cx="5.6" cy="5" r="3.6" fill="#fff"/><circle cx="7.1" cy="5" r="3.6" fill="#EF3340"/><g fill="#fff"><polygon points="10.60,0.95 10.85,1.66 11.60,1.68 11.00,2.13 11.22,2.85 10.60,2.42 9.98,2.85 10.20,2.13 9.60,1.68 10.35,1.66"/><polygon points="13.45,3.02 13.70,3.73 14.45,3.75 13.85,4.20 14.07,4.92 13.45,4.49 12.84,4.92 13.05,4.20 12.45,3.75 13.21,3.73"/><polygon points="12.36,6.38 12.61,7.09 13.36,7.10 12.76,7.56 12.98,8.28 12.36,7.85 11.75,8.28 11.96,7.56 11.36,7.10 12.12,7.09"/><polygon points="8.84,6.38 9.08,7.09 9.84,7.10 9.24,7.56 9.45,8.28 8.84,7.85 8.22,8.28 8.44,7.56 7.84,7.10 8.59,7.09"/><polygon points="7.75,3.02 7.99,3.73 8.75,3.75 8.15,4.20 8.36,4.92 7.75,4.49 7.13,4.92 7.35,4.20 6.75,3.75 7.50,3.73"/></g></svg>Buy in Singapore</button>
   </div>
+  <p class="aff">Affiliate links: I may earn a commission if you buy through them, at no extra cost to you.</p>
   <div class="machines" id="machine-list"></div>
 </section>
 
@@ -738,7 +741,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
 </section>
 
 <section class="wrap" id="support" aria-label="Member Care &amp; Help Support">
-  <h2 class="big"><span class="g">Member Care</span> &amp; Help Support<small>Search a topic, Phone, Chat or Email support</small></h2>
+  <h2 class="big"><span class="g">Member Care</span> &amp; Help Support<small>Official Cricut contact numbers and help links. This is not Cricut's own support page.</small></h2>
   <div class="topics">
     <a class="tp" href="https://help.cricut.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><span>Subscriptions &amp; Orders</span></a>
     <a class="tp" href="https://help.cricut.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg><span>Design Space®</span></a>
@@ -884,7 +887,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
       <div class="msheet" id="sheet">
         <button class="grab" id="sx" type="button" aria-label="Hide list"></button>
         <h3>Get Your Cricut Machine</h3>
-        <p>Click the button to purchase.</p>
+        <p>Click the button to purchase. <small class="aff-s">Affiliate links: I may earn a commission.</small></p>
         <ul class="uses" id="uses"></ul>
       </div>
     </div>
