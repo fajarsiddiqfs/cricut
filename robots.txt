@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cricut.fajarsiddiq.com/sitemap.xml
