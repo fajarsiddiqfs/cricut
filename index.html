@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Fajar Siddiq Cricut — Cricut for beginners and business</title>
-<meta name="description" content="Cricut for beginners and business. Make stickers, vinyl, iron-on, t-shirts and gifts at home to studio. Start for fun, then sell. Shop in Malaysia &amp; Singapore.">
+<title>Fajar Siddiq — Think It, Make It. Cricut</title>
+<meta name="description" content="Cricut for beginners and business. Make stickers, vinyl, iron-on, t-shirts and gifts at home to studio. Start for fun, then sell. Shop in Malaysia and Singapore.">
 <link rel="canonical" href="https://cricut.fajarsiddiq.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Fajar Siddiq">
@@ -570,7 +570,7 @@ footer p{max-width:860px;margin:0 auto 12px;line-height:1.6;text-wrap:balance}
    "@type": "WebPage",
    "@id": "https://cricut.fajarsiddiq.com/#webpage",
    "url": "https://cricut.fajarsiddiq.com/",
-   "name": "Fajar Siddiq Cricut — Cricut for beginners and business",
+   "name": "Fajar Siddiq — Think It, Make It. Cricut",
    "isPartOf": {
     "@id": "https://cricut.fajarsiddiq.com/#website"
    },
@@ -1358,7 +1358,7 @@ addEventListener("keydown",e=>{if(!modal.classList.contains("open"))return;if(e.
 /* Find your machine */
 const mWrap=$("#machine-list");
 MACHINES.forEach(m=>{
-  const c=el("div","mc",'<div class="top"><span class="badge">'+esc(m.badge)+'</span>'+(m.rating?'<span class="rate" role="img" aria-label="Rated '+esc(m.rating)+' out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcd34d"/><stop offset="1" stop-color="#f0a92b"/></linearGradient></defs><path d="M12 2.2l2.9 6.1 6.7.9-4.9 4.6 1.2 6.6L12 17.2l-5.9 3.2 1.2-6.6L2.4 9.2l6.7-.9z" fill="url(#sg)" stroke="#f0a92b" stroke-width="1.2" stroke-linejoin="round"/></svg>'+esc(m.rating)+'</span>':'')+'</div><img class="mimg" src="'+m.img+'" alt="'+esc(m.name)+' bundle" loading="lazy" decoding="async"><h3>'+esc(m.name)+'</h3><p>'+esc(m.text)+'</p><a class="btn" href="#" target="_blank" rel="sponsored noopener">Buy on <img class="shi" src="'+SHOPEE_ICON+'" alt="Shopee" width="16" height="16"> Shopee</a><span class="cl"></span>');
+  const c=el("div","mc",'<div class="top"><span class="badge">'+esc(m.badge)+'</span>'+(m.rating?'<span class="rate" role="img" aria-label="Rated '+esc(m.rating)+' out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcd34d"/><stop offset="1" stop-color="#f0a92b"/></linearGradient></defs><path d="M12 2.2l2.9 6.1 6.7.9-4.9 4.6 1.2 6.6L12 17.2l-5.9 3.2 1.2-6.6L2.4 9.2l6.7-.9z" fill="url(#sg)" stroke="#f0a92b" stroke-width="1.2" stroke-linejoin="round"/></svg>'+esc(m.rating)+'</span>':'')+'</div><img class="mimg" src="'+m.img+'" alt="Cricut machine bundle" loading="lazy" decoding="async"><h3>'+esc(m.name)+'</h3><p>'+esc(m.text)+'</p><a class="btn" href="#" target="_blank" rel="sponsored noopener">Buy on <img class="shi" src="'+SHOPEE_ICON+'" alt="Shopee" width="16" height="16"> Shopee</a><span class="cl"></span>');
   c.dataset.id=m.id;mWrap.appendChild(c);
 });
 function refreshCountry(anim){
@@ -1366,7 +1366,7 @@ function refreshCountry(anim){
   MACHINES.forEach(m=>{
     const c=mWrap.querySelector('[data-id="'+m.id+'"]');
     c.querySelector(".btn").href=buy(m);
-    const im=c.querySelector(".mimg");if(im)im.src=(CC==="SG"&&m.imgSG)?m.imgSG:m.img;
+    const im=c.querySelector(".mimg");if(im)im.alt=m.name+" bundle";if(im)im.src=(CC==="SG"&&m.imgSG)?m.imgSG:m.img;
     const cl=c.querySelector(".cl");if(cl)cl.innerHTML=document.querySelector('.mtog [data-c="'+CC+'"] svg').outerHTML+"Buy in "+(CC==="MY"?"Malaysia":"Singapore");
   });
   if(anim)mWrap.querySelectorAll(".mc").forEach(c=>{c.classList.remove("in");void c.offsetWidth;c.classList.add("in");});
